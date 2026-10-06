@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Ou Lé Pa Tousèl — Face au harcèlement scolaire</title>
+<meta name="description" content="Ados et parents : comprendre le harcèlement scolaire, savoir réagir, trouver de l'aide. Gratuit, anonyme, créé à La Réunion.">
+<meta property="og:title" content="Ou Lé Pa Tousèl — Face au harcèlement, personne ne reste seul">
+<meta property="og:description" content="Un espace pour les ados, un espace pour les parents : signaux, réflexes, dialogue, démarches, numéros d'aide.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Karla:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --indigo:#2b3a8f; --indigo-f:#1d2a6b; --indigo-p:#e3e8fb;
+  --jaune:#ffc93c; --jaune-p:#fff3d1;
+  --corail:#ff7d6b; --corail-f:#c2412f; --corail-p:#ffe6e1;
+  --vert:#16a34a; --vert-p:#dcfce7;
+  --encre:#1c2340; --encre2:#4e5680;
+  --r:1.25rem;
+  --ombre:0 12px 32px -14px rgba(29,42,107,.28), 0 2px 8px -4px rgba(29,42,107,.14);
+  color-scheme:light;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:'Karla',system-ui,sans-serif;color:var(--encre);line-height:1.55;min-height:100vh;
+  background-color:#f3f6ff;
+  background-image:
+   radial-gradient(900px 480px at 90% -8%, #ffe9b3 0%, transparent 55%),
+   radial-gradient(1100px 640px at -12% 20%, #dde5ff 0%, transparent 60%),
+   linear-gradient(168deg,#f3f6ff 0%, #fff7e6 100%);
+}
+h1,h2,h3,.display{font-family:'Space Grotesk',sans-serif;letter-spacing:-.01em}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+a{color:var(--indigo-f)}
+[tabindex="-1"]:focus{outline:none}
+.app{max-width:640px;margin:0 auto;padding:16px 16px 110px}
+.carte{background:rgba(255,255,255,.82);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.9);border-radius:var(--r);box-shadow:var(--ombre);padding:20px}
+.note{font-size:.82rem;color:var(--encre2)}
+.espace{height:14px}
+button:focus-visible,a:focus-visible,textarea:focus-visible,input:focus-visible{outline:3px solid var(--indigo-f);outline-offset:2px;border-radius:12px}
+.sr{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+
+/* ---- Phare (signature) ---- */
+.phare{display:flex;align-items:center;gap:12px;padding:8px 2px 14px}
+.phare svg{flex-shrink:0}
+.phare h1{font-size:1.25rem;color:var(--indigo-f);line-height:1.15}
+.phare small{display:block;font-family:'Karla';font-weight:700;font-size:.68rem;color:var(--encre2);letter-spacing:.07em;text-transform:uppercase}
+@keyframes faisceau{0%,100%{opacity:.35}50%{opacity:1}}
+.lum{animation:faisceau 3.2s ease-in-out infinite;transform-origin:center}
+
+/* ---- Boutons ---- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:800;font-size:1rem;padding:14px 20px;border-radius:16px;transition:transform .12s;text-align:center;text-decoration:none;min-height:48px}
+.btn:active{transform:scale(.96)}
+.btn-indigo{background:var(--indigo);color:#fff;box-shadow:0 8px 20px -8px rgba(43,58,143,.6)}
+.btn-jaune{background:var(--jaune);color:var(--indigo-f);box-shadow:0 8px 20px -8px rgba(255,201,60,.7)}
+.btn-corail{background:var(--corail-f);color:#fff;box-shadow:0 8px 20px -8px rgba(255,125,107,.65)}
+.btn-ligne{border:2px solid var(--indigo-p);color:var(--indigo-f);background:#fff}
+.btn-petit{font-size:.88rem;padding:10px 14px;min-height:42px}
+.btn-large{width:100%}
+.btn-choix{width:100%;background:#fff;border:2px solid #e4e8f8;border-radius:16px;padding:15px;font-weight:700;font-size:.95rem;text-align:left;transition:border-color .15s,transform .12s;min-height:52px}
+.btn-choix:active{transform:scale(.98)}
+.btn-choix.ok{border-color:var(--vert);background:var(--vert-p)}
+.btn-choix.ko{border-color:var(--corail);background:var(--corail-p);animation:secoue .35s}
+.btn-choix:disabled{cursor:default;opacity:.94}
+@keyframes secoue{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+
+/* ---- Choix d'espace ---- */
+.duo-espaces{display:flex;flex-direction:column;gap:14px;margin-top:16px}
+.espace-carte{text-align:left;display:flex;gap:16px;align-items:center;padding:22px;transition:transform .15s}
+.espace-carte:active{transform:scale(.98)}
+.espace-carte .gros{font-size:2.2rem}
+.espace-carte h2{font-size:1.15rem}
+.espace-carte p{font-size:.85rem;color:var(--encre2)}
+.esp-ado{border-left:6px solid var(--jaune)}
+.esp-par{border-left:6px solid var(--corail)}
+
+/* ---- Menus & sections ---- */
+.menu-liste{display:flex;flex-direction:column;gap:12px;margin-top:14px}
+.menu-item{display:flex;align-items:center;gap:14px;text-align:left;width:100%;transition:transform .15s}
+.menu-item:active{transform:scale(.98)}
+.mi-ico{width:50px;height:50px;border-radius:15px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0}
+.menu-item h3{font-size:.98rem}
+.menu-item p{font-size:.8rem;color:var(--encre2)}
+.menu-item .fait{margin-left:auto;color:var(--vert);font-weight:800}
+.tete{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.btn-retour{width:44px;height:44px;border-radius:14px;background:#fff;border:1.5px solid #e4e8f8;font-size:1.1rem;flex-shrink:0}
+.tete h2{font-size:1.08rem;flex:1}
+.etq{display:inline-block;font-size:.66rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:999px;margin-bottom:10px}
+.etq-j{background:var(--jaune-p);color:#7a5900}
+.etq-c{background:var(--corail-p);color:#a3352a}
+.etq-i{background:var(--indigo-p);color:var(--indigo-f)}
+.etq-v{background:var(--vert-p);color:#166534}
+
+/* ---- Contenu pédagogique ---- */
+.bloc{margin-bottom:12px}
+.bloc h3{font-size:.98rem;margin-bottom:6px;color:var(--indigo-f)}
+.bloc p,.bloc li{font-size:.92rem}
+.bloc ul{padding-left:20px;display:flex;flex-direction:column;gap:6px}
+.pilier{display:flex;gap:12px;margin-bottom:12px;align-items:flex-start}
+.pilier .num{width:40px;height:40px;border-radius:13px;background:var(--jaune-p);display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk';font-weight:700;color:#7a5900;flex-shrink:0}
+.encadre{padding:14px;border-radius:14px;font-size:.9rem;margin-top:10px}
+.enc-ok{background:var(--vert-p);border:1.5px solid #86efac}
+.enc-non{background:var(--corail-p);border:1.5px solid #ffb3a7}
+.enc-info{background:var(--indigo-p);border:1.5px solid #c3cdf5}
+.retour-info{margin-top:14px;padding:16px;border-radius:16px;font-size:.92rem;animation:apparait .3s}
+.retour-ok{background:var(--vert-p);border:1.5px solid #86efac}
+.retour-ko{background:var(--jaune-p);border:1.5px solid #ffd97a}
+.retour-info b{display:block;margin-bottom:4px}
+@keyframes apparait{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.jauge{height:9px;background:#e4e8f8;border-radius:999px;overflow:hidden;margin:8px 0 4px}
+.jauge i{display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,var(--indigo),var(--jaune));transition:width .5s}
+
+/* ---- Question flash (propre à chaque onglet) ---- */
+.flash{border:2px dashed #c3cdf5;background:rgba(255,255,255,.92)}
+.flash-tete{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:6px;flex-wrap:wrap}
+.flash-tete .etq{margin-bottom:0}
+.flash .q{font-weight:700;font-size:.98rem;margin:8px 0 10px}
+.flash .menu-liste{margin-top:0;gap:8px}
+.flash .btn-choix{padding:12px 14px;min-height:46px;font-size:.9rem}
+.flash .compteur{font-size:.72rem;font-weight:800;color:var(--encre2)}
+
+/* ---- Respiration ---- */
+.souffle-scene{display:flex;flex-direction:column;align-items:center;padding:26px 0 10px}
+.cercle{width:150px;height:150px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff6d8,var(--jaune));box-shadow:0 0 0 14px rgba(255,201,60,.18),0 0 60px rgba(255,201,60,.5);transition:transform 4s ease-in-out;display:flex;align-items:center;justify-content:center;font-weight:800;color:#6b4e00;font-size:1.05rem;text-align:center}
+.cercle.grand,.cercle.tenu{transform:scale(1.45)}
+.cercle.petit{transform:scale(1)}
+
+/* ---- Registre ---- */
+textarea,input[type=text],input[type=date]{width:100%;border:2px solid #e4e8f8;border-radius:14px;padding:12px;font-family:'Karla';font-size:.95rem;background:#fff;color:var(--encre)}
+textarea{min-height:84px;resize:vertical}
+textarea:focus,input:focus{outline:none;border-color:var(--indigo)}
+.champ{margin-bottom:10px}
+.champ label{display:block;font-size:.8rem;font-weight:800;color:var(--encre2);margin-bottom:4px}
+.entree{margin-top:12px;font-size:.9rem;border-left:4px solid var(--indigo)}
+.entree time{font-size:.72rem;font-weight:800;color:var(--encre2);text-transform:uppercase}
+.entree h4{font-size:.9rem;color:var(--indigo-f);margin:2px 0 4px}
+.entree p{margin-bottom:3px}
+.entree .suppr{margin-top:8px;font-size:.8rem;font-weight:800;color:var(--corail-f);padding:6px 0;min-height:36px}
+.msg{font-size:.88rem;font-weight:700;margin-top:10px;color:#166534}
+.msg.err{color:var(--corail-f)}
+.erreur-champ{color:var(--corail-f);font-size:.82rem;font-weight:700;margin-top:4px}
+
+/* ---- SOS ---- */
+#btn-sos{position:fixed;right:14px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:70;min-width:64px;height:64px;border-radius:999px;background:var(--corail-f);color:#fff;font-family:'Space Grotesk';font-weight:700;font-size:1.05rem;padding:0 20px;box-shadow:0 10px 26px -8px rgba(194,65,47,.8);border:3px solid #fff;display:flex;align-items:center;gap:8px;justify-content:center}
+#btn-vocal{position:fixed;left:14px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:70;width:54px;height:54px;border-radius:50%;background:var(--indigo);color:#fff;font-size:1.3rem;border:3px solid #fff;box-shadow:0 8px 20px -6px rgba(43,58,143,.6)}
+#btn-vocal.off{background:#7c84ab}
+.voile{position:fixed;inset:0;background:rgba(20,26,60,.55);backdrop-filter:blur(4px);z-index:80;display:flex;align-items:flex-end;justify-content:center;animation:apparait .2s}
+.voile[hidden]{display:none}
+.sos-panneau{background:#fff;border-radius:24px 24px 0 0;width:100%;max-width:640px;padding:24px 20px calc(20px + env(safe-area-inset-bottom,0px));max-height:88vh;overflow:auto}
+.sos-panneau h2{color:var(--indigo-f);margin-bottom:4px}
+.num{display:flex;align-items:center;gap:14px;background:#fff;border:2px solid #e4e8f8;border-radius:16px;padding:14px;margin-top:10px;text-decoration:none;color:inherit}
+.num b{font-family:'Space Grotesk';font-size:1.25rem;color:var(--indigo-f);flex-shrink:0;min-width:72px}
+.num span{font-size:.85rem}
+.num span b{font-family:'Karla';font-size:.9rem;min-width:0;display:inline}
+.num.urgent{border-color:var(--corail);background:var(--corail-p)}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.cercle{transition:none}}
+</style>
+</head>
+<body>
+<div class="app" id="app"></div>
+<div class="sr" id="annonce" role="status" aria-live="polite"></div>
+<button id="btn-vocal" class="off" aria-pressed="false" aria-label="Activer la lecture vocale" title="Lecture vocale">🔇</button>
+<button id="btn-sos" aria-haspopup="dialog" aria-label="Besoin d'aide maintenant : numéros d'urgence et d'écoute">🛟 SOS</button>
+<div id="sos" class="voile" role="dialog" aria-modal="true" aria-labelledby="sos-titre" hidden>
+ <div class="sos-panneau">
+  <h2 id="sos-titre" tabindex="-1">🛟 Besoin d'aide maintenant ?</h2>
+  <p class="note">Appels gratuits et confidentiels. Tu n'as pas à gérer ça tout seul — en parler est un acte de courage, pas de faiblesse.</p>
+  <a class="num" href="tel:3018"><b>3018</b><span><b>Harcèlement et cyberharcèlement</b> — numéro national, gratuit, anonyme et confidentiel, pour les jeunes et les parents. 7j/7 de 9h à 23h, aussi par tchat et appli 3018. Peut faire retirer des contenus en ligne.</span></a>
+  <a class="num" href="tel:3114"><b>3114</b><span><b>Si les idées deviennent trop sombres</b> — professionnels à l'écoute, 24h/24, 7j/7</span></a>
+  <a class="num" href="tel:119"><b>119</b><span><b>Enfance en danger</b> — 24h/24, 7j/7, gratuit</span></a>
+  <a class="num" href="tel:0800235236"><b style="font-size:1rem">0800 235 236</b><span><b>Fil Santé Jeunes</b> — 12-25 ans, anonyme et gratuit, tous les jours 9h-23h</span></a>
+  <a class="num urgent" href="tel:112"><b>17 / 112</b><span><b>Danger immédiat</b> — police secours (15 pour une urgence médicale)</span></a>
+  <div class="encadre enc-info">💛 Et près de toi : un parent, un professeur, la CPE, l'infirmière scolaire, un adulte en qui tu as confiance. Le premier pas, c'est une phrase : « J'ai besoin de te parler de quelque chose. »</div>
+  <div class="espace"></div>
+  <button class="btn btn-indigo btn-large" id="sos-fermer">Fermer</button>
+ </div>
+</div>
+<script>
+"use strict";
+/* ================= DONNÉES =================
+   Les banques ne font que grandir : chaque question garde son identifiant (son rang).
+   Le quiz tire un sous-ensemble à chaque partie, en privilégiant les questions jamais vues. */
+const QADO=[
+ {sc:"Depuis trois semaines, un groupe se moque de toi à chaque récré. Hier, ils ont jeté ta casquette dans la poubelle.",
+  opts:["Répondre par des insultes plus fortes","En parler à un adulte de confiance","Ne rien dire, ça finira par passer","Éviter la cour de récré"],ok:1,
+  why:"Répété + volonté de blesser + toi seul face à un groupe : les 3 critères du harcèlement sont réunis. En parler n'est pas « balancer » — balancer, c'est chercher à nuire ; parler, c'est se protéger. Et ça marche : dans la grande majorité des cas, le harcèlement s'arrête quand des adultes sont au courant."},
+ {sc:"Chaque soir, tu reçois des messages méchants d'un compte anonyme.",
+  opts:["Répondre pour te défendre","Tout supprimer pour ne plus les voir","Faire des captures d'écran, bloquer le compte et montrer à un adulte","Créer un faux compte pour riposter"],ok:2,
+  why:"Réflexe expert : les preuves d'abord (captures avec la date), puis bloquer, puis en parler. Ne jamais répondre : c'est exactement ce que la personne attend, et ça peut se retourner contre toi. Le 3018 peut même faire retirer des contenus."},
+ {sc:"Dans le bus, tu vois un élève de ta classe se faire bousculer tous les jours par les mêmes personnes.",
+  opts:["Rire avec les autres pour être tranquille","Filmer pour montrer plus tard","Regarder ailleurs, ce ne sont pas tes affaires","T'asseoir à côté de lui et prévenir un adulte"],ok:3,
+  why:"Le harcèlement tient grâce au silence des témoins. Un seul élève qui s'assoit à côté de la victime casse son isolement — et c'est souvent ce qui fait tout basculer. Tu n'as pas besoin d'affronter le groupe : ta présence + un adulte prévenu suffisent."},
+ {sc:"Quelqu'un te menace : « Si tu parles, ce sera encore pire pour toi. »",
+  opts:["Te taire pour être tranquille","Parler quand même à un adulte de confiance","Attendre de voir si ça se calme","Le menacer en retour"],ok:1,
+  why:"Cette menace est le carburant du harcèlement : elle prouve que parler est justement ce qui lui fait peur. Les adultes peuvent agir sans te mettre en danger — dis-leur aussi qu'on t'a menacé, c'est une information importante."},
+ {sc:"Sur un groupe WhatsApp de la classe, des élèves partagent une photo de toi avec des moqueries.",
+  opts:["Quitter le groupe et tout supprimer","Faire des captures, signaler, et en parler à tes parents","Poster une photo d'un autre élève pour détourner l'attention","Supplier qu'on retire la photo"],ok:1,
+  why:"Ne supprime rien : les captures d'écran sont tes preuves. Diffuser une photo pour nuire est puni par la loi, même entre mineurs. Le 3018 et tes parents peuvent faire retirer la photo et faire cesser ça."},
+ {sc:"Depuis la rentrée, on t'exclut systématiquement des jeux, des groupes de travail et des conversations.",
+  opts:["Ce n'est pas du harcèlement, personne ne te frappe","C'est une forme de harcèlement : l'exclusion répétée","C'est ta faute, il faut être plus drôle","Changer complètement de personnalité"],ok:1,
+  why:"Le harcèlement n'est pas que des coups ou des insultes : mettre quelqu'un à l'écart, encore et encore, en est une forme à part entière — souvent la plus invisible pour les adultes. Elle mérite d'être signalée exactement pareil. Et non, ce n'est jamais ta faute."},
+ {sc:"Ton meilleur ami t'avoue qu'il est harcelé et te fait jurer de ne rien dire à personne.",
+  opts:["Tenir ta promesse quoi qu'il arrive","Le raconter à toute la classe","L'aider à en parler à un adulte, même si c'est dur","Régler le problème toi-même avec les harceleurs"],ok:2,
+  why:"Il y a des secrets qui protègent les gens, et des secrets qui protègent le problème. Celui-ci protège le problème. Dis-lui : « Je ne te lâche pas, mais on ne peut pas gérer ça seuls. Je viens avec toi voir [adulte]. » Un vrai ami aide à sortir du piège, pas à y rester."},
+ {sc:"Tu en parles à un surveillant qui répond : « Bah, c'est des jeux d'enfants, ça va passer. »",
+  opts:["Laisser tomber, les adultes ne comprennent rien","En parler à un autre adulte : professeur principal, CPE, infirmière, tes parents","Te venger toi-même puisque personne n'agit","Ne plus jamais en parler"],ok:1,
+  why:"Un adulte qui minimise, ça arrive — et c'est lui qui a tort, pas toi. La règle d'expert : on ne s'arrête jamais au premier refus. Professeur principal, CPE, direction, tes parents, le 3018 : il existe toujours une autre porte, et l'une d'elles s'ouvrira."},
+ {sc:"Un élève te demande ton mot de passe Insta « juste pour rigoler ».",
+  opts:["Le donner, c'est un pote","Refuser : un mot de passe ne se partage jamais, même avec un ami","Le donner et le changer plus tard","Lui donner un faux mot de passe pour voir"],ok:1,
+  why:"Avec ton mot de passe, quelqu'un peut publier à ta place, lire tes messages ou te faire chanter. Si tu l'as déjà donné : change-le maintenant et active la double authentification. Refuser n'est pas impoli, c'est te protéger."},
+ {sc:"Une rumeur fausse sur toi circule dans tout le collège.",
+  opts:["Aller te justifier auprès de chaque élève","En parler à un adulte et noter qui a dit quoi, et quand","Lancer une rumeur sur quelqu'un d'autre","Ne plus venir en cours"],ok:1,
+  why:"Les rumeurs sont une forme de harcèlement social. Te justifier auprès de chacun les entretient. Note les faits (qui, quand, où), puis parles-en à un adulte : l'établissement peut agir sur ceux qui la font circuler."},
+ {sc:"Tu as liké une vidéo qui se moquait d'un élève. Maintenant, tu le regrettes.",
+  opts:["Ce n'est qu'un like, ce n'est pas grave","Retirer ton like et, si tu peux, envoyer un message de soutien à l'élève","Partager la vidéo pour faire comme les autres","Te moquer encore plus pour ne pas paraître faible"],ok:1,
+  why:"Un like, c'est un spectateur qui applaudit. La bonne nouvelle : on peut changer de camp à tout moment. Retirer ton like, soutenir l'élève en privé et prévenir un adulte, c'est déjà aider."},
+ {sc:"Dans une conversation, on insiste pour que tu envoies une photo de toi « un peu osée ».",
+  opts:["Envoyer, tout le monde le fait","Refuser, quitter la conversation, et en parler à un adulte si ça insiste","Envoyer la photo de quelqu'un d'autre","Envoyer puis demander de la supprimer"],ok:1,
+  why:"Une photo envoyée échappe à tout contrôle. Faire pression pour l'obtenir est interdit par la loi. Et si une photo a déjà circulé : ce n'est pas ta faute, le 3018 peut la faire retirer rapidement."},
+ {sc:"Chaque dimanche soir, tu as mal au ventre en pensant au collège.",
+  opts:["C'est dans ta tête, ignore-le","C'est un signal : ton corps te parle, il est temps d'en parler à quelqu'un","Te faire porter malade jusqu'aux vacances","Garder ça pour toi pour ne pas inquiéter tes parents"],ok:1,
+  why:"Le corps tire souvent la sonnette d'alarme avant les mots. Ce mal de ventre n'est pas « dans ta tête » : il dit que quelque chose pèse. En parler à un adulte, c'est la première étape pour que ça s'allège."},
+ {sc:"Le harceleur s'est excusé devant le professeur, puis il a recommencé dès que l'adulte est parti.",
+  opts:["Il s'est excusé, c'est réglé","Retourner voir l'adulte et lui dire que ça continue","Te venger maintenant que tu as raison","Ne plus rien dire, sinon ce sera pire"],ok:1,
+  why:"Des excuses suivies des mêmes attaques ne règlent rien. Les adultes ont besoin de savoir que ça a repris : c'est même une information importante pour eux. Tu as le droit de revenir les voir autant de fois que nécessaire."},
+ {sc:"Un ami te dit qu'il « n'en peut plus » et qu'il aimerait « disparaître ».",
+  opts:["Changer de sujet pour lui changer les idées","Le prendre au sérieux, rester avec lui et prévenir tout de suite un adulte, ou appeler le 3114","Lui dire qu'il exagère","Garder le secret pour ne pas le trahir"],ok:1,
+  why:"Ces mots sont un appel à l'aide. Tu n'as pas à le gérer seul, et prévenir un adulte n'est pas une trahison : c'est le protéger. Le 3114 répond 24h/24. En cas de danger immédiat : 15 ou 112."},
+ {sc:"Des élèves imitent ton accent ou se moquent quand tu parles créole.",
+  opts:["Arrêter de parler créole","Si ça se répète pour te blesser, c'est du harcèlement : en parler à un adulte","Te moquer de leur accent en retour","Rien à faire, c'est culturel"],ok:1,
+  why:"Ta langue et ta façon de parler font partie de toi. Se moquer encore et encore de l'origine ou de la langue de quelqu'un, c'est du harcèlement, et c'est aussi discriminatoire. Tu as le droit d'être protégé, sans changer qui tu es."},
+ {sc:"Tu es témoin, mais tu as peur de devenir la prochaine cible.",
+  opts:["Ne rien faire du tout","Prévenir un adulte discrètement, ou envoyer un message de soutien en privé à l'élève visé","Filmer la scène","Rejoindre le groupe pour être tranquille"],ok:1,
+  why:"Aider ne veut pas dire affronter le groupe. Un mot discret à un adulte, un ambassadeur harcèlement, ou un message « ça va ? » en privé : ces gestes-là protègent la victime sans t'exposer."},
+ {sc:"Après une attaque, tu te sens nul et tu te dis que tu le mérites.",
+  opts:["Ils ont sûrement raison","Ces pensées viennent de l'attaque, pas de la vérité : parles-en et rappelle-toi une chose que tu sais faire","Te replier et ne plus voir personne","Tout changer chez toi pour leur plaire"],ok:1,
+  why:"Le harcèlement fait croire à la victime qu'elle est le problème. C'est faux. Note une chose dont tu es fier, même petite, et parle de ce que tu ressens à quelqu'un de confiance : ça aide à remettre les choses à leur place."}
+];
+
+const QPAR=[
+ {sc:"Votre fille lâche au dîner : « De toute façon, tout le monde me déteste au collège. »",
+  opts:["« Mais non, arrête de dire n'importe quoi. »","« Qu'est-ce qui te fait dire ça ? Raconte-moi. »","« Ignore-les, c'est des idiots. »","« Il faut te défendre, ma fille ! »"],ok:1,
+  why:"Une phrase pareille est presque toujours une porte entrouverte. La rassurer trop vite (« mais non ») referme la porte : elle entend « mon ressenti est faux ». La question ouverte, calme, sans dramatiser, dit : « je te prends au sérieux ». Écoutez d'abord tout, sans interrompre, avant toute solution."},
+ {sc:"Vous découvrez des messages d'insultes répétés sur son téléphone.",
+  opts:["Confisquer le téléphone pour le protéger","Contacter directement les parents des auteurs","Faire des captures d'écran, puis lui en parler calmement","Répondre aux auteurs depuis son téléphone"],ok:2,
+  why:"Confisquer le téléphone revient à punir la victime : votre enfant apprend que se confier = perdre son téléphone, et il se taira la prochaine fois. Contacter les autres parents à chaud dégénère souvent. Le geste expert : préserver les preuves, ouvrir le dialogue, puis agir avec l'école et le 3018."},
+ {sc:"Vous avez signalé oralement la situation au collège il y a deux semaines. Rien ne bouge.",
+  opts:["Attendre encore, ils sont débordés","Passer à l'écrit : mail daté à la direction avec les faits, et appeler le 3018","Retirer votre enfant de l'établissement immédiatement","Aller trouver vous-même les élèves concernés"],ok:1,
+  why:"Règle d'or : l'oral s'oublie, l'écrit engage. Un mail daté, factuel (votre registre des faits sert à ça), adressé au chef d'établissement, crée une trace et une obligation de réponse. Sans réaction : référent harcèlement académique, puis rectorat — toujours par écrit. Le 3018 vous conseille à chaque étape."},
+ {sc:"Un matin, votre ado refuse d'aller au collège, en larmes, le ventre noué.",
+  opts:["Le forcer : il ne faut pas céder","Accueillir sa détresse ce matin-là, chercher à comprendre, et contacter l'établissement","Le laisser à la maison sans rien dire à personne","Lui promettre de ne rien faire s'il y retourne"],ok:1,
+  why:"Le refus scolaire brutal est un signal majeur, pas un caprice. Forcer sans comprendre peut aggraver ; ne rien dire à l'école laisse le problème intact. Et attention à la promesse piège « je ne dirai rien » : dites plutôt « on décidera ensemble des étapes, je ne ferai rien dans ton dos »."},
+ {sc:"Votre entourage vous dit : « Il doit apprendre à se défendre tout seul, ça forge le caractère. »",
+  opts:["C'est vrai, c'est comme ça qu'on grandit","C'est faux : le harcèlement est un rapport de force à plusieurs contre un","C'est vrai s'il fait un sport de combat","Ça dépend de son âge"],ok:1,
+  why:"Le harcèlement n'est pas une bagarre d'égal à égal : c'est un groupe (ou un rapport de domination) contre un enfant isolé. Aucun enfant ne peut « se défendre seul » contre un mécanisme de groupe — pas plus qu'un adulte harcelé au travail. L'aide des adultes n'est pas du couvage : c'est la seule réponse proportionnée."},
+ {sc:"Le collège vous appelle : votre enfant serait cette fois du côté des harceleurs.",
+  opts:["Nier en bloc : pas votre enfant","Écouter les faits, en parler avec lui sans l'écraser, poser un cadre clair","Le punir massivement sans discussion","Minimiser : c'est de son âge"],ok:1,
+  why:"Le plus dur des scénarios. Ni déni, ni destruction : on écoute les faits précis, on laisse l'enfant s'exprimer, on nomme clairement l'interdit et les conséquences, et on cherche ce que ce comportement exprime (besoin d'appartenance au groupe, peur d'être la prochaine cible…). Sanctionner l'acte, jamais rejeter la personne — c'est ce qui permet le changement."},
+ {sc:"Votre fils vous dit : « Si tu vas voir le collège, je ne te dirai plus jamais rien. »",
+  opts:["Lui promettre de ne rien faire","Lui dire que vous ne ferez rien dans son dos : vous déciderez ensemble des étapes, sauf en cas de danger","Y aller quand même sans le prévenir","Abandonner l'idée de prévenir l'école"],ok:1,
+  why:"Sa peur principale : perdre le contrôle de la situation. Le pacte « rien dans ton dos, on décide ensemble, sauf danger » le rassure sans vous lier les mains. Montrez-lui le mail avant de l'envoyer : il reste acteur."},
+ {sc:"Votre fille de 13 ans passe ses nuits sur son téléphone et semble épuisée.",
+  opts:["Confisquer le téléphone sans explication","Ouvrir le dialogue sur ce qui se passe la nuit, puis convenir ensemble de règles d'écran","Ignorer : c'est l'adolescence","Lire ses messages en cachette"],ok:1,
+  why:"Les nuits sur le téléphone peuvent cacher du cyberharcèlement… ou simplement une habitude. Commencez par comprendre, sans accuser. Des règles décidées ensemble (téléphone hors de la chambre la nuit, par exemple) tiennent mieux qu'une confiscation punitive."},
+ {sc:"Le collège propose une rencontre entre votre enfant et l'élève qui le harcèle, « pour qu'ils s'expliquent ».",
+  opts:["Accepter : c'est toujours bien de se parler","Demander d'abord des mesures de protection : une confrontation directe n'est pas adaptée au harcèlement","Couper tout contact avec l'école","Organiser vous-même la rencontre"],ok:1,
+  why:"La médiation convient à un conflit entre égaux, pas au harcèlement, où il y a un rapport de force. Mettre la victime face à son harceleur peut l'exposer. Demandez des mesures de protection et le suivi du protocole de l'établissement, qui prévoit des entretiens séparés."},
+ {sc:"Votre enfant vous montre une vidéo humiliante de lui qui circule en ligne.",
+  opts:["La supprimer de son téléphone et passer à autre chose","Capturer (lien, comptes, date), signaler à la plateforme, appeler le 3018, prévenir l'établissement","Publier un message public pour dénoncer les auteurs","Le gronder de s'être laissé filmer"],ok:1,
+  why:"Les preuves d'abord, puis le signalement. Le 3018 est partenaire des réseaux sociaux et peut obtenir un retrait rapide. Publier pour dénoncer expose encore plus votre enfant. Et surtout : ce n'est jamais la faute de la victime."},
+ {sc:"Vous êtes très en colère juste avant le rendez-vous au collège.",
+  opts:["Y aller tel quel : ils doivent sentir votre colère","Préparer 3 demandes précises par écrit, et prendre deux minutes pour respirer avant d'entrer","Annuler le rendez-vous","Venir avec toute la famille pour impressionner"],ok:1,
+  why:"Votre colère est légitime, mais un rendez-vous tendu se retourne souvent contre l'enfant. Trois demandes claires (protection, adulte référent, date de point d'étape) obtiennent plus qu'un éclat. Notez les engagements pris et confirmez-les par mail."},
+ {sc:"Votre ado refuse de vous en parler, mais accepterait d'en parler à quelqu'un d'autre.",
+  opts:["Le vivre comme un rejet","L'aider à trouver cet adulte : infirmière scolaire, CPE, un oncle, une ligne d'écoute","Insister jusqu'à ce qu'il parle","Lui dire : « c'est moi ou personne »"],ok:1,
+  why:"Beaucoup d'ados protègent leurs parents en se taisant. Qu'il parle, c'est l'essentiel, même si ce n'est pas à vous. Le 3018 et Fil Santé Jeunes (0800 235 236) sont aussi des portes ouvertes, anonymes et gratuites."},
+ {sc:"L'établissement vous répond enfin par écrit et annonce des mesures.",
+  opts:["Considérer l'affaire comme close","Accuser réception, noter les mesures et fixer une date de point d'étape","Contester tout par principe","Ne pas répondre"],ok:1,
+  why:"Une réponse écrite est une bonne nouvelle : elle engage l'établissement. Restez dans la coopération, notez les mesures dans votre registre et fixez une date pour vérifier qu'elles sont appliquées."},
+ {sc:"Votre enfant harcelé commence à tenir des propos très sombres.",
+  opts:["Attendre que ça passe","Rester avec lui, le prendre au sérieux et appeler sans attendre le 3114 ou un médecin ; 15 ou 112 en cas de danger immédiat","Lui demander de se ressaisir","En parler à l'école la semaine prochaine"],ok:1,
+  why:"Des propos sur la mort ou l'envie de disparaître sont toujours à prendre au sérieux. Ne le laissez pas seul, parlez-en directement avec lui, et faites-vous aider tout de suite : le 3114 répond 24h/24, pour lui comme pour vous."}
+];
+QADO.forEach((q,i)=>q.id="a"+i);
+QPAR.forEach((q,i)=>q.id="p"+i);
+const NB_ADO=8, NB_PAR=6;
+
+/* Questions flash : une petite banque propre à chaque onglet */
+const FLASH={
+ comprendre:[
+  {q:"Une moquerie isolée, un seul jour : est-ce du harcèlement ?",o:["Oui, toujours","Pas forcément : le harcèlement, c'est quand ça se répète","Seulement si c'est sur internet"],ok:1,w:"Le harcèlement, c'est la répétition. Mais une seule moquerie peut quand même blesser : tu as toujours le droit d'en parler."},
+  {q:"Être mis à l'écart exprès, encore et encore, c'est…",o:["Pas grave, personne ne te frappe","Une forme de harcèlement","Normal au collège"],ok:1,w:"L'exclusion répétée est du harcèlement social. Souvent invisible pour les adultes, elle est tout aussi grave."},
+  {q:"Si quelqu'un est harcelé, c'est parce que…",o:["Il a un défaut","Les harceleurs ont besoin d'un public, pas d'une raison","Il ne s'est pas assez défendu"],ok:1,w:"Ce n'est jamais la faute de la victime. Le problème, c'est le comportement de ceux qui harcèlent."},
+  {q:"Le cyberharcèlement s'arrête quand on rentre chez soi ?",o:["Oui","Non, il peut continuer partout, même dans ta chambre","Seulement le week-end"],ok:1,w:"C'est pour ça qu'il épuise autant. Captures d'écran, blocage, et le 3018 peuvent aider."}
+ ],
+ outils:[
+  {q:"La respiration du phare, c'est…",o:["4 s j'inspire, 4 s je garde, 6 s je souffle","Retenir sa respiration le plus longtemps possible","Respirer très vite pour se réveiller"],ok:0,w:"Souffler plus longtemps qu'on inspire envoie au cerveau le signal « je suis en sécurité »."},
+  {q:"Dans la posture du capitaine, où regardes-tu ?",o:["Au sol","À l'horizon","Derrière toi"],ok:1,w:"Pieds ancrés, épaules relâchées, regard à l'horizon : ton corps dit « je tiens debout »."},
+  {q:"Répéter « Si tu le dis » calmement sert à…",o:["Provoquer","Ne pas donner de réaction à se mettre sous la dent","Insulter poliment"],ok:1,w:"Sans réaction, le jeu s'épuise. Puis tu t'éloignes, tête haute."},
+  {q:"Les attaques se répètent malgré les phrases qui protègent. Tu…",o:["Réponds physiquement","En parles à un adulte","Attends que ça passe"],ok:1,w:"Ces phrases aident pour les petites attaques. Quand ça se répète, la vraie force, c'est d'en parler."}
+ ],
+ parler:[
+  {q:"Parler à un adulte, c'est « balancer » ?",o:["Oui","Non : balancer cherche à nuire, parler cherche à protéger"],ok:1,w:"Parler, c'est te protéger ou protéger un ami. C'est un acte de courage."},
+  {q:"Le premier adulte minimise. Tu…",o:["Abandonnes","Vas voir un autre adulte"],ok:1,w:"On ne s'arrête jamais au premier refus : professeur principal, CPE, infirmière, parents, 3018."},
+  {q:"Le 3018, c'est…",o:["Payant","Gratuit et confidentiel","Réservé aux adultes"],ok:1,w:"Gratuit, pour les jeunes comme pour les parents, par téléphone, tchat ou appli."},
+  {q:"Si le dire à voix haute est trop dur, tu peux…",o:["Ne rien dire","L'écrire : un mot, un SMS à un adulte de confiance"],ok:1,w:"L'écrit compte autant que l'oral. L'important, c'est que quelqu'un sache."}
+ ],
+ signaux:[
+  {q:"Un seul signal (par exemple une mauvaise note) prouve-t-il un harcèlement ?",o:["Oui","Non, c'est le faisceau d'indices qui compte"],ok:1,w:"Plusieurs signaux qui apparaissent ensemble ou qui durent : c'est là qu'il faut s'inquiéter."},
+  {q:"Maux de ventre le dimanche soir, mais jamais pendant les vacances…",o:["Un caprice","Un signal à prendre au sérieux"],ok:1,w:"Le corps parle souvent avant les mots. Notez-le dans le registre."},
+  {q:"Face à plusieurs signaux, le premier réflexe :",o:["Demander frontalement « On te harcèle ? »","Observer, noter les faits datés, ouvrir le dialogue en douceur"],ok:1,w:"La question frontale ferme souvent la porte. La porte latérale l'ouvre."}
+ ],
+ dialogue:[
+  {q:"Votre ado se confie. La première chose à faire :",o:["Proposer tout de suite des solutions","Écouter jusqu'au bout, sans interrompre","Appeler le collège"],ok:1,w:"Un enfant qui se sent cru redira les choses. Les solutions viennent après."},
+  {q:"Promettre le secret absolu, c'est…",o:["Une bonne idée pour qu'il parle","Une promesse piège : promettez plutôt de ne rien faire dans son dos"],ok:1,w:"Vous ne pourrez pas la tenir s'il est en danger. Promettez de décider ensemble des étapes."},
+  {q:"Le meilleur cadre pour une conversation difficile :",o:["Face à face, à table, devant toute la famille","Côte à côte : en voiture, en marchant, en cuisinant"],ok:1,w:"Sans regard direct, la pression baisse et la parole se libère plus facilement."}
+ ],
+ ecole:[
+  {q:"Après un rendez-vous au collège, il faut…",o:["Attendre la suite","Envoyer un mail récapitulatif daté"],ok:1,w:"L'oral s'oublie, l'écrit engage : « Suite à notre rendez-vous du…, nous avons convenu que… »"},
+  {q:"Contacter directement les parents des auteurs :",o:["Recommandé","À éviter : passez par l'établissement"],ok:1,w:"À chaud, ces échanges dégénèrent souvent. L'établissement est le bon intermédiaire."},
+  {q:"Faits graves (violences, images intimes) : faut-il attendre la fin des démarches scolaires pour porter plainte ?",o:["Oui","Non, les deux démarches sont indépendantes"],ok:1,w:"La plainte et les démarches scolaires avancent en parallèle."},
+  {q:"En France, le harcèlement scolaire est-il un délit ?",o:["Oui, depuis la loi du 2 mars 2022","Non"],ok:0,w:"C'est pourquoi l'établissement a une obligation de protection dès qu'il est informé."}
+ ],
+ registre:[
+  {q:"Un bon registre contient…",o:["Des impressions générales","Des faits datés : lieu, mots exacts, témoins"],ok:1,w:"L'école agit sur des faits, pas sur des impressions."},
+  {q:"Un incident « petit » mérite-t-il d'être noté ?",o:["Non","Oui : c'est la répétition qui fait le harcèlement"],ok:1,w:"Ce sont les petits faits répétés qui montrent qu'il s'agit de harcèlement."},
+  {q:"Où conserver les captures d'écran ?",o:["Nulle part, on les supprime","Dans un dossier daté, et mentionnées dans le registre"],ok:1,w:"Nommez chaque fichier avec la date : elles deviennent des pièces de votre dossier."}
+ ]
+};
+
+const SIGNAUX=[
+ ["😴","Sommeil perturbé, cauchemars, difficultés d'endormissement"],
+ ["🎒","Affaires perdues, abîmées ou « volées » à répétition"],
+ ["🤢","Maux de ventre ou de tête, surtout le dimanche soir et le matin"],
+ ["🚌","Veut changer de trajet, part plus tôt ou plus tard, évite le bus"],
+ ["📉","Chute des résultats scolaires, perte de motivation"],
+ ["📱","Sursaute ou s'angoisse à chaque notification — ou coupe brutalement les réseaux"],
+ ["🚪","Repli sur soi, ne voit plus ses amis, s'enferme dans sa chambre"],
+ ["💶","Demandes d'argent inhabituelles ou argent qui disparaît"],
+ ["🍽️","Appétit modifié, repas sautés"],
+ ["😶","Irritabilité inhabituelle, larmes faciles, phrases de dévalorisation (« je suis nul »)"]
+];
+
+const OUVREURS=[
+ {t:"L'ouverture douce (méthode CNV)",p:"« J'ai remarqué que tu restes dans ta chambre depuis deux semaines et que tu ne vois plus Enzo (observation, sans jugement). Je me sens inquiet, parce que tu comptes énormément pour moi (sentiment + besoin). Tu veux m'en parler maintenant, ou ce soir après le repas ? (demande, avec un choix) »"},
+ {t:"La porte latérale",p:"En voiture ou en cuisinant, sans face-à-face : « C'était comment, l'ambiance au collège aujourd'hui ? » — l'absence de regard direct libère souvent la parole des ados."},
+ {t:"Le tiers détour",p:"« J'ai vu un reportage sur le harcèlement au collège. Ça existe dans ton établissement, ce genre de choses ? » — parler des autres avant de parler de soi."},
+ {t:"La validation inconditionnelle",p:"S'il parle : « Merci de me le dire. Ce n'est pas ta faute. On va trouver des solutions ensemble, et je ne ferai rien dans ton dos. » — les trois phrases que chaque enfant harcelé a besoin d'entendre."}
+];
+const AEVITER=[
+ "« Pourquoi tu ne te défends pas ? » (il entend : c'est ta faute)",
+ "« Ignore-les et ça passera » (le harcèlement installé ne passe pas tout seul)",
+ "Promettre le secret absolu (promettez plutôt : rien ne se fera sans lui)",
+ "Foncer au collège à chaud le jour même, devant les autres élèves",
+ "Contacter les parents des auteurs directement (passez par l'établissement)",
+ "Confisquer le téléphone d'une victime de cyberharcèlement (elle se taira ensuite)"
+];
+
+const DEMARCHES=[
+ ["1","Consigner les faits","Dates, lieux, faits précis, témoins, conséquences. Utilisez le registre intégré à cette app : un dossier factuel et daté est votre meilleur allié — l'école agit sur des faits, pas sur des impressions."],
+ ["2","Rendez-vous à l'école","Professeur principal et CPE d'abord, puis chef d'établissement. Restez factuel, appuyez-vous sur votre registre. Chaque établissement a un protocole (programme pHARe) et des adultes formés."],
+ ["3","Confirmer par écrit","Après chaque échange oral : un mail récapitulatif daté (« Suite à notre rendez-vous du…, nous avons convenu que… »). L'écrit crée la trace et l'engagement."],
+ ["4","Si rien ne bouge","Référent harcèlement de l'académie de La Réunion (via le rectorat), et le 3018 qui vous conseille. Toujours par écrit, toujours factuel."],
+ ["5","Cyberharcèlement","Captures d'écran conservées, signalement sur la plateforme (réseau social), appel au 3018 qui peut obtenir le retrait des contenus en quelques heures."],
+ ["6","Faits graves","Violences physiques, menaces, diffusion d'images intimes : dépôt de plainte (le harcèlement scolaire est un délit), certificats médicaux, et n'attendez pas que l'école ait « fini » — les deux démarches sont indépendantes."]
+];
+
+const LIENS={
+ coach:"https://coachhoueejm1210.systeme.io/3895d328",
+ livre:"https://share.google/qvat7vyTUbL45pVTw",
+ presse:"https://la1ere.franceinfo.fr/reunion/des-lycees-de-la-reunion-luttent-activement-contre-le-harcelement-scolaire-1653779.html"
+};
+
+/* ================= ÉTAT & OUTILS ================= */
+const memoire={};
+const STOCK={
+ ok:(()=>{try{localStorage.setItem("_t","1");localStorage.removeItem("_t");return true}catch(e){return false}})(),
+ get(k){try{return this.ok?JSON.parse(localStorage.getItem(k)):(memoire[k]??null)}catch(e){return null}},
+ set(k,v){if(this.ok){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}else{memoire[k]=v}}
+};
+const DEFAUT={vocal:false,quizAdo:0,quizPar:0,vus:{},registre:[],vuesQ:{},flashDernier:{}};
+let S=Object.assign({},DEFAUT,STOCK.get("olpt-etat")||{});
+if(!Array.isArray(S.registre))S.registre=[];
+for(const k of ["vus","vuesQ","flashDernier"]) if(!S[k]||typeof S[k]!=="object") S[k]={};
+const sauver=()=>STOCK.set("olpt-etat",S);
+const app=document.getElementById("app");
+const esc=t=>String(t).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+
+function parler(txt){
+ if(!("speechSynthesis"in window))return;
+ speechSynthesis.cancel();
+ const u=new SpeechSynthesisUtterance(txt);u.lang="fr-FR";u.rate=.95;speechSynthesis.speak(u);
+}
+const EMO_RE=/[\u{1F000}-\u{1FAFF}\u{2190}-\u{27BF}\u{2B00}-\u{2BFF}\u{FE0F}✓→·«»…—–]/gu;
+function nettoyer(t){return String(t).replace(EMO_RE," ").replace(/\b3018\b/g,"30 18").replace(/\b3114\b/g,"31 14").replace(/\s+/g," ").trim()}
+function annoncer(t){if(S.vocal)parler(nettoyer(t))}
+function direAuLecteur(t){const z=document.getElementById("annonce");z.textContent="";setTimeout(()=>{z.textContent=t},40)}
+function majBoutonVocal(){
+ const b=document.getElementById("btn-vocal");
+ b.classList.toggle("off",!S.vocal);b.textContent=S.vocal?"🔊":"🔇";
+ b.setAttribute("aria-pressed",String(S.vocal));
+ b.setAttribute("aria-label",S.vocal?"Désactiver la lecture vocale":"Activer la lecture vocale");
+}
+function basculerVocal(){
+ S.vocal=!S.vocal;sauver();majBoutonVocal();
+ if(S.vocal)parler("Lecture vocale activée. Les contenus et les questions seront lus à voix haute.");
+ else if(window.speechSynthesis)speechSynthesis.cancel();
+}
+
+/* ---- SOS : fenêtre accessible (Échap, clic sur le fond, retour du focus) ---- */
+let sosOrigine=null;
+function ouvrirSOS(){
+ const s=document.getElementById("sos");sosOrigine=document.activeElement;
+ s.hidden=false;document.getElementById("sos-titre").focus();
+ annoncer("Numéros d'aide. 30 18 : harcèlement et cyberharcèlement. 31 14 si les idées deviennent trop sombres. 1 1 9 : enfance en danger. Fil Santé Jeunes : 0 800 235 236. 17 ou 1 1 2 en cas de danger immédiat.");
+}
+function fermerSOS(){
+ document.getElementById("sos").hidden=true;
+ if(window.speechSynthesis)speechSynthesis.cancel();
+ if(sosOrigine&&sosOrigine.focus)sosOrigine.focus();
+}
+document.getElementById("btn-sos").addEventListener("click",ouvrirSOS);
+document.getElementById("sos-fermer").addEventListener("click",fermerSOS);
+document.getElementById("sos").addEventListener("click",e=>{if(e.target.id==="sos")fermerSOS()});
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&!document.getElementById("sos").hidden)fermerSOS()});
+document.getElementById("btn-vocal").addEventListener("click",basculerVocal);
+
+/* ---- Navigation : arrête la voix et la respiration, place le focus sur le titre ---- */
+let souffleT=null;
+function aller(fn,...a){
+ if(window.speechSynthesis)speechSynthesis.cancel();
+ if(souffleT){clearTimeout(souffleT);souffleT=null}
+ window.scrollTo(0,0);fn(...a);
+ const h=app.querySelector("h2,h1");
+ if(h){h.setAttribute("tabindex","-1");h.focus({preventScroll:true})}
+}
+const PHARE=`<svg width="46" height="52" viewBox="0 0 46 52" aria-hidden="true">
+ <polygon class="lum" points="23,10 -6,0 -6,20" fill="#ffc93c" opacity=".55"/>
+ <polygon class="lum" points="23,10 52,0 52,20" fill="#ffc93c" opacity=".55"/>
+ <rect x="17" y="6" width="12" height="9" rx="2" fill="#ffc93c"/>
+ <path d="M18 15 L28 15 L31 46 L15 46 Z" fill="#2b3a8f"/>
+ <rect x="19.5" y="22" width="7" height="4" rx="1.5" fill="#fff" opacity=".85"/>
+ <rect x="18.5" y="31" width="9" height="4" rx="1.5" fill="#fff" opacity=".85"/>
+ <path d="M8 46 Q23 40 38 46 L38 50 L8 50 Z" fill="#5a72d8" opacity=".5"/>
+</svg>`;
+function tete(titre,retourFn){
+ return`<div class="tete"><button class="btn-retour" onclick="aller(${retourFn})" aria-label="Retour">←</button><h2>${titre}</h2></div>`;
+}
+
+/* ---- Tirage : mélange, questions jamais vues en priorité, réponses dans un ordre nouveau ---- */
+function melange(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+function melangerOptions(opts,ok){
+ const ordre=melange(opts.map((_,i)=>i));
+ return {opts:ordre.map(i=>opts[i]),ok:ordre.indexOf(ok)};
+}
+function tirer(banque,n,cle){
+ let vues=(S.vuesQ[cle]||[]).filter(id=>banque.some(q=>q.id===id));
+ if(banque.length-vues.length<n) vues=[]; // toutes vues : nouveau cycle
+ const neuves=melange(banque.filter(q=>!vues.includes(q.id)));
+ const pick=neuves.slice(0,n);
+ S.vuesQ[cle]=vues.concat(pick.map(q=>q.id));sauver();
+ return pick.map(q=>Object.assign({},q,melangerOptions(q.opts,q.ok)));
+}
+
+/* ---- Question flash : propre à chaque onglet, différente à chaque visite ---- */
+let F=null;
+function blocFlash(cle){return`<section class="carte bloc flash" id="flash" data-cle="${cle}" aria-labelledby="flash-titre"></section>`}
+function lancerFlash(cle){
+ const pool=FLASH[cle];if(!pool)return;
+ const dernier=S.flashDernier[cle];
+ const cands=pool.map((_,i)=>i).filter(i=>i!==dernier);
+ const i=cands[Math.floor(Math.random()*cands.length)];
+ S.flashDernier[cle]=i;sauver();
+ const q=pool[i],m=melangerOptions(q.o,q.ok);
+ F={cle,i,q:q.q,o:m.opts,ok:m.ok,w:q.w,total:pool.length};
+ rFlash();
+}
+function rFlash(){
+ const z=document.getElementById("flash");if(!z||!F)return;
+ z.innerHTML=`<div class="flash-tete"><span class="etq etq-i" id="flash-titre">⚡ Question flash</span><span class="compteur">${F.total} questions pour cet onglet</span></div>
+  <p class="q" tabindex="-1">${F.q}</p>
+  <div class="menu-liste" id="flash-opts">${F.o.map((o,k)=>`<button class="btn-choix" onclick="repFlash(this,${k})">${o}</button>`).join("")}</div>
+  <div id="flash-fb" aria-live="polite"></div>`;
+}
+function repFlash(btn,k){
+ const ok=k===F.ok;
+ document.querySelectorAll("#flash-opts .btn-choix").forEach((b,i)=>{b.disabled=true;if(i===F.ok)b.classList.add("ok")});
+ if(!ok)btn.classList.add("ko");
+ document.getElementById("flash-fb").innerHTML=`<div class="retour-info ${ok?"retour-ok":"retour-ko"}"><b>${ok?"✅ Bien vu !":"🌤️ Pas tout à fait."}</b>${F.w}</div>
+  <div class="espace"></div><button class="btn btn-ligne btn-large btn-petit" onclick="lancerFlash('${F.cle}');document.querySelector('#flash .q').focus()">↻ Une autre question</button>`;
+ annoncer((ok?"Bien vu. ":"Pas tout à fait. La bonne réponse : "+F.o[F.ok]+". ")+F.w);
+}
+
+/* ================= ACCUEIL ================= */
+function rAccueil(){
+ app.innerHTML=`
+ <header class="phare">${PHARE}
+  <div><h1>Ou Lé Pa Tousèl</h1><small>Face au harcèlement, personne ne reste seul · La Réunion</small></div>
+ </header>
+ <div class="carte" style="border-left:6px solid var(--jaune)">
+  <p style="font-size:.95rem"><b>« Ou lé pa tousèl »</b> — en créole : <i>tu n'es pas tout seul</i>. Cette app t'aide à comprendre ce qui se passe, à savoir quoi faire, et à trouver les bonnes personnes. Gratuite, anonyme, rien n'est envoyé nulle part.</p>
+ </div>
+ <div class="duo-espaces">
+  <button class="carte espace-carte esp-ado" onclick="aller(rAdoMenu)">
+   <span class="gros" aria-hidden="true">🧑</span>
+   <div><h2>Je suis un ado</h2><p>Comprendre, savoir réagir, reprendre des forces — pour toi ou pour un ami.</p></div>
+  </button>
+  <button class="carte espace-carte esp-par" onclick="aller(rParMenu)">
+   <span class="gros" aria-hidden="true">👨‍👩‍👧</span>
+   <div><h2>Je suis un parent</h2><p>Repérer les signaux, ouvrir le dialogue, agir avec l'école, garder des traces.</p></div>
+  </button>
+ </div>
+ <p class="note" style="text-align:center;margin-top:16px">🛟 Le bouton SOS en bas à droite est toujours là, sur chaque écran.</p>
+ <p class="note" style="text-align:center;margin-top:6px">Conçu à La Réunion par Jean-Michel Houée, éducateur spécialisé et coach — ateliers anti-harcèlement en collège.</p>`;
+ annoncer("Ou Lé Pa Tousèl. Face au harcèlement, personne ne reste seul. Choisis ton espace : je suis un ado, ou je suis un parent. Le bouton S.O.S en bas à droite donne les numéros d'aide à tout moment.");
+}
+
+/* ================= ESPACE ADO ================= */
+function rAdoMenu(){
+ app.innerHTML=`${tete("🧑 Ton espace","rAccueil")}
+ <div class="menu-liste">
+  ${[["comprendre","💡","var(--jaune-p)","C'est quoi, le harcèlement ?","Les 3 critères, les formes, et pourquoi ce n'est jamais ta faute"],
+     ["quizado","🎮","var(--indigo-p)","Sauras-tu réagir ?",`${NB_ADO} situations tirées parmi ${QADO.length}, nouvelles à chaque partie`+(S.quizAdo?` · record ${S.quizAdo}/${NB_ADO}`:"")],
+     ["outils","🧰","var(--vert-p)","Ta boîte à outils","Respiration du phare, posture du capitaine, phrases qui protègent"],
+     ["parler","🗣️","var(--corail-p)","À qui parler ?","Ce qui se passe vraiment quand on parle (spoiler : ça aide)"]]
+   .map(([id,emo,c,ti,st])=>`
+  <button class="carte menu-item" onclick="aller(r_${id})">
+   <div class="mi-ico" style="background:${c}" aria-hidden="true">${emo}</div>
+   <div><h3>${ti}</h3><p>${st}</p></div>
+   ${S.vus[id]?'<span class="fait" aria-label="déjà vu">✓</span>':""}
+  </button>`).join("")}
+ </div>`;
+ annoncer("Ton espace. Quatre choix : C'est quoi le harcèlement. Sauras-tu réagir, un quiz qui change à chaque partie. Ta boîte à outils. Et : à qui parler.");
+}
+function vu(id){S.vus[id]=true;sauver()}
+function r_comprendre(){vu("comprendre");
+ app.innerHTML=`${tete("💡 C'est quoi, le harcèlement ?","rAdoMenu")}
+ <div class="carte bloc">
+  <span class="etq etq-j">Les 3 critères</span>
+  <div class="pilier"><div class="num">1</div><div><b>Ça se répète.</b><p class="note">Pas une dispute ou une moquerie isolée : les mêmes attaques, encore et encore.</p></div></div>
+  <div class="pilier"><div class="num">2</div><div><b>C'est fait pour blesser.</b><p class="note">Ce n'est pas « pour rire » quand une seule personne rit.</p></div></div>
+  <div class="pilier"><div class="num">3</div><div><b>Tu es en position de faiblesse.</b><p class="note">Plusieurs contre un, plus grands, plus populaires… Ce n'est pas un combat égal — c'est pour ça que tu n'as pas à le gagner seul.</p></div></div>
+ </div>
+ <div class="carte bloc">
+  <span class="etq etq-i">Les formes</span>
+  <ul>
+   <li><b>Physique</b> : coups, bousculades, affaires abîmées ou volées</li>
+   <li><b>Verbale</b> : insultes, surnoms humiliants, menaces</li>
+   <li><b>Sociale</b> : exclusion, rumeurs, « personne ne lui parle » — la plus invisible, tout aussi grave</li>
+   <li><b>Cyber</b> : messages, photos, groupes… Elle te suit jusque dans ta chambre, c'est pour ça qu'elle épuise autant</li>
+  </ul>
+ </div>
+ <div class="carte encadre enc-ok" style="margin-top:0">
+  💛 <b>À graver quelque part :</b> ce n'est <b>jamais</b> ta faute. Pas ton physique, pas tes vêtements, pas ta voix, pas tes notes. Les harceleurs choisissent une cible — n'importe laquelle — parce qu'ils ont besoin d'un public, pas parce que tu as un « défaut ». Le problème, c'est leur comportement. Pas toi.
+ </div>
+ <div class="espace"></div>
+ ${blocFlash("comprendre")}
+ <button class="btn btn-jaune btn-large" onclick="aller(r_quizado)">🎮 Teste tes réflexes →</button>`;
+ lancerFlash("comprendre");
+ annoncer("C'est quoi le harcèlement ? Trois critères : ça se répète. C'est fait pour blesser. Et tu es en position de faiblesse, plusieurs contre un. Les formes : physique, verbale, sociale comme l'exclusion, et cyber. Et surtout : ce n'est jamais ta faute. Une question flash t'attend en bas de la page.");
+}
+
+/* ---- Quiz générique ---- */
+let Q={};
+function lancerQuiz(data,mode){Q={data,mode,i:0,sc:0};rQ()}
+function r_quizado(){vu("quizado");lancerQuiz(tirer(QADO,NB_ADO,"ado"),"ado")}
+function r_quizpar(){vuP("quizpar");lancerQuiz(tirer(QPAR,NB_PAR,"par"),"par")}
+function rQ(){
+ const d=Q.data;
+ if(Q.i>=d.length)return finQuiz();
+ const q=d[Q.i];
+ app.innerHTML=`${tete(Q.mode==="ado"?"🎮 Sauras-tu réagir ?":"🧭 Le bon réflexe",Q.mode==="ado"?"rAdoMenu":"rParMenu")}
+ <div class="jauge" role="progressbar" aria-label="Progression du quiz" aria-valuemin="0" aria-valuemax="${d.length}" aria-valuenow="${Q.i}"><i style="width:${(Q.i/d.length)*100}%"></i></div>
+ <p class="note" style="text-align:right">Situation ${Q.i+1} / ${d.length} · ${Q.sc} ✓</p>
+ <div class="carte bloc"><span class="etq ${Q.mode==="ado"?"etq-j":"etq-c"}">Situation</span><p style="font-size:.98rem;font-weight:500" id="q-texte" tabindex="-1">${q.sc}</p></div>
+ <div class="menu-liste" id="opts">
+  ${q.opts.map((o,idx)=>`<button class="btn-choix" onclick="repQ(this,${idx})">${o}</button>`).join("")}
+ </div>
+ <div id="zone-fb" role="status" aria-live="polite"></div>`;
+ if(Q.i>0)document.getElementById("q-texte").focus({preventScroll:true});
+ annoncer(`Situation ${Q.i+1} sur ${d.length}. ${q.sc} Les options sont : ${q.opts.map((o,i)=>`Option ${i+1} : ${o}`).join(". ")}`);
+}
+function repQ(btn,idx){
+ const q=Q.data[Q.i],ok=idx===q.ok;
+ if(ok)Q.sc++;
+ document.querySelectorAll("#opts .btn-choix").forEach((b,i)=>{b.disabled=true;if(i===q.ok)b.classList.add("ok")});
+ if(!ok)btn.classList.add("ko");
+ document.getElementById("zone-fb").innerHTML=`
+ <div class="retour-info ${ok?"retour-ok":"retour-ko"}">
+  <b>${ok?"✅ Exactement le bon réflexe !":"🌤️ Pas celui-là — et c'est justement pour ça qu'on s'entraîne."}</b>${q.why}
+ </div>
+ <div class="espace"></div><button class="btn btn-indigo btn-large" id="q-suite" onclick="Q.i++;rQ();window.scrollTo(0,0)">Continuer →</button>`;
+ document.getElementById("q-suite").focus({preventScroll:true});
+ annoncer((ok?"Exactement le bon réflexe ! ":"Pas celui-là. Le bon réflexe était : "+q.opts[q.ok]+". ")+q.why);
+}
+function finQuiz(){
+ const d=Q.data,cle=Q.mode==="ado"?"quizAdo":"quizPar",banque=Q.mode==="ado"?QADO:QPAR;
+ if(Q.sc>S[cle])S[cle]=Q.sc;
+ sauver();
+ const restantes=banque.length-(S.vuesQ[Q.mode]||[]).length;
+ app.innerHTML=`<div class="carte" style="text-align:center;padding:34px 22px">
+  <div style="font-size:3rem" aria-hidden="true">${Q.sc===d.length?"🏆":Q.sc>=d.length*.6?"💪":"🌱"}</div>
+  <h2 style="margin:8px 0 4px">${Q.sc} / ${d.length} bons réflexes</h2>
+  <p class="note">${Q.sc===d.length?"Sans faute — tu sais exactement quoi faire.":"Chaque situation revue est un réflexe gagné pour la vraie vie."}</p>
+  <p class="note" style="margin-top:6px">${restantes>0?`Encore ${restantes} situation${restantes>1?"s":""} jamais vue${restantes>1?"s":""} : la prochaine partie commencera par elles.`:"Tu as vu toutes les situations : la prochaine partie les remélange."}</p>
+  <div class="espace"></div>
+  <button class="btn btn-jaune btn-large" onclick="aller(${Q.mode==="ado"?"r_quizado":"r_quizpar"})">↻ Nouvelle partie, nouvelles situations</button>
+  <div class="espace"></div>
+  <button class="btn btn-ligne btn-large" onclick="aller(${Q.mode==="ado"?"rAdoMenu":"rParMenu"})">Retour à l'espace</button>
+ </div>`;
+ annoncer(`Quiz terminé ! ${Q.sc} bons réflexes sur ${d.length}.`);
+}
+
+/* ---- Boîte à outils ado ---- */
+function r_outils(){vu("outils");
+ app.innerHTML=`${tete("🧰 Ta boîte à outils","rAdoMenu")}
+ <div class="carte bloc">
+  <span class="etq etq-j">La respiration du phare</span>
+  <p class="note">Quand la boule monte dans le ventre (avant d'entrer en classe, après une attaque) : 4 secondes j'inspire, 4 je garde, 6 je souffle. Trois tours, et le cerveau reçoit le signal « je suis en sécurité ».</p>
+  <div class="souffle-scene">
+   <div class="cercle" id="cercle" aria-live="polite">Prêt ?</div>
+  </div>
+  <div class="espace"></div>
+  <button class="btn btn-jaune btn-large" id="btn-souffle" onclick="souffler()">▶ Lancer 3 respirations guidées</button>
+ </div>
+ <div class="carte bloc">
+  <span class="etq etq-v">La posture du capitaine <span style="text-transform:none">(ancrage)</span></span>
+  <p style="font-size:.92rem">30 secondes, avant d'affronter un moment difficile : debout, <b>pieds bien à plat</b> comme plantés dans le sol, <b>épaules relâchées</b>, <b>regard à l'horizon</b> (pas au sol). Respire une fois profondément. Ton corps envoie un message à ton cerveau — et aux autres : « je suis là, je tiens debout. » Les harceleurs cherchent des cibles qui se font toutes petites ; la posture change déjà la donne.</p>
+ </div>
+ <div class="carte bloc">
+  <span class="etq etq-i">Les phrases qui protègent</span>
+  <p style="font-size:.92rem">Courtes, calmes, sans agressivité — puis tu t'éloignes, tête haute :</p>
+  <ul>
+   <li>« Stop. » <span class="note">(un mot, ton neutre, et tu pars)</span></li>
+   <li>« Et alors ? » <span class="note">(désamorce la moquerie : tu refuses d'être blessé)</span></li>
+   <li>« Si tu le dis. » <span class="note">(répétée pareil à chaque attaque — le disque rayé : sans réaction à se mettre sous la dent, le jeu s'épuise)</span></li>
+  </ul>
+  <div class="encadre enc-non">⚠️ Ces phrases servent à traverser les petites attaques verbales, pas à régler le harcèlement. Si ça se répète, si tu es en danger, si c'est un groupe : la vraie force, c'est l'étape suivante → <b>en parler</b>. Et ne réponds jamais physiquement — c'est souvent la victime qui se fait sanctionner.</div>
+ </div>
+ <div class="espace"></div>
+ ${blocFlash("outils")}
+ <button class="btn btn-corail btn-large" onclick="aller(r_parler)">🗣️ À qui parler ? →</button>`;
+ lancerFlash("outils");
+ annoncer("Ta boîte à outils. Un : la respiration du phare, 4 secondes j'inspire, 4 je garde, 6 je souffle, appuie sur le bouton pour être guidé. Deux : la posture du capitaine, pieds ancrés, épaules relâchées, regard à l'horizon. Trois : les phrases courtes qui protègent, comme Stop, ou Et alors, puis on s'éloigne. Et si ça se répète, la vraie force c'est d'en parler.");
+}
+function souffler(){
+ const c=document.getElementById("cercle"),b=document.getElementById("btn-souffle");
+ if(souffleT){clearTimeout(souffleT);souffleT=null}
+ b.disabled=true;let tour=0;
+ const cycle=()=>{
+  if(!document.getElementById("cercle"))return;
+  if(tour>=3){c.className="cercle";c.textContent="Bien joué 💛";b.disabled=false;annoncer("Bien joué. Tu peux recommencer quand tu veux.");return}
+  tour++;
+  c.className="cercle grand";c.style.transitionDuration="4s";c.textContent="J'inspire…";annoncer("J'inspire, 2, 3, 4.");
+  souffleT=setTimeout(()=>{c.className="cercle tenu";c.textContent="Je garde…";annoncer("Je garde, 2, 3, 4.");
+   souffleT=setTimeout(()=>{c.className="cercle petit";c.style.transitionDuration="6s";c.textContent="Je souffle…";annoncer("Je souffle, tout doucement, 2, 3, 4, 5, 6.");
+    souffleT=setTimeout(cycle,6200);
+   },4000);
+  },4000);
+ };
+ cycle();
+}
+function r_parler(){vu("parler");
+ app.innerHTML=`${tete("🗣️ À qui parler ?","rAdoMenu")}
+ <div class="carte bloc">
+  <span class="etq etq-c">Pourquoi c'est LE geste qui change tout</span>
+  <p style="font-size:.93rem">Le harcèlement survit grâce à une seule chose : le silence. Tant que personne ne sait, rien ne peut bouger. Dès que des adultes savent, dans la grande majorité des cas, ça s'arrête. Parler n'est pas « balancer » : balancer cherche à nuire, parler cherche à se protéger — ou à protéger un ami.</p>
+ </div>
+ <div class="carte bloc">
+  <span class="etq etq-i">Tes alliés, dans l'ordre que TU choisis</span>
+  <ul>
+   <li>🏠 <b>Un parent</b> ou un adulte de ta famille</li>
+   <li>🏫 <b>Au collège / lycée</b> : professeur principal, CPE, infirmière scolaire, un prof en qui tu as confiance, les ambassadeurs harcèlement de ton établissement</li>
+   <li>📞 <b>Au téléphone, anonymement</b> : le 3018 (harcèlement et cyberharcèlement) ou Fil Santé Jeunes (0800 235 236) — des adultes formés, qui ne te jugeront pas et ne feront rien sans t'expliquer</li>
+   <li>🤝 <b>Un ami</b> pour t'accompagner : tout est plus facile à deux</li>
+  </ul>
+ </div>
+ <div class="carte bloc">
+  <span class="etq etq-v">Comment commencer (les mots exacts)</span>
+  <p style="font-size:.93rem">Si les mots ne viennent pas, prends ceux-là :</p>
+  <div class="encadre enc-ok">« J'ai besoin de te parler de quelque chose de sérieux. Depuis [quand], [ce qui se passe, avec des faits]. J'aimerais que tu m'aides. »</div>
+  <p class="note" style="margin-top:8px">Tu peux aussi l'écrire (un mot, un SMS) si le dire à voix haute est trop dur. Et si le premier adulte minimise, tu passes au suivant — ne t'arrête jamais au premier refus.</p>
+ </div>
+ <div class="espace"></div>
+ ${blocFlash("parler")}
+ <button class="btn btn-corail btn-large" onclick="ouvrirSOS()">🛟 Voir les numéros d'aide</button>`;
+ lancerFlash("parler");
+ annoncer("À qui parler. Le harcèlement survit grâce au silence : dès que des adultes savent, dans la grande majorité des cas, ça s'arrête. Tes alliés : un parent, le professeur principal, la CPE, l'infirmière scolaire, ou le 30 18 par téléphone, anonymement. Pour commencer, dis simplement : j'ai besoin de te parler de quelque chose de sérieux. Et si le premier adulte minimise, passe au suivant.");
+}
+
+/* ================= ESPACE PARENT ================= */
+function vuP(id){S.vus["p_"+id]=true;sauver()}
+function rParMenu(){
+ app.innerHTML=`${tete("👨‍👩‍👧 Espace parents","rAccueil")}
+ <div class="menu-liste">
+  ${[["signaux","🔎","var(--corail-p)","Repérer les signaux","Le faisceau d'indices qui doit alerter"],
+     ["dialogue","💬","var(--jaune-p)","Ouvrir le dialogue","Les mots qui ouvrent, les phrases qui ferment"],
+     ["quizpar","🧭","var(--indigo-p)","Le bon réflexe",`${NB_PAR} situations tirées parmi ${QPAR.length}, nouvelles à chaque partie`+(S.quizPar?` · record ${S.quizPar}/${NB_PAR}`:"")],
+     ["ecole","🏫","var(--vert-p)","Agir avec l'école","La méthode pas à pas, de l'oral à l'écrit"],
+     ["registre","📋","var(--indigo-p)","Le registre des faits",`Votre dossier factuel et daté — l'outil qui fait agir${S.registre.length?` · ${S.registre.length} incident${S.registre.length>1?"s":""}`:""}`]]
+   .map(([id,emo,c,ti,st])=>`
+  <button class="carte menu-item" onclick="aller(r_${id})">
+   <div class="mi-ico" style="background:${c}" aria-hidden="true">${emo}</div>
+   <div><h3>${ti}</h3><p>${st}</p></div>
+   ${S.vus["p_"+id]?'<span class="fait" aria-label="déjà vu">✓</span>':""}
+  </button>`).join("")}
+ </div>
+ <div class="espace"></div>
+ <div class="carte">
+  <b style="font-family:'Space Grotesk'">Aller plus loin</b>
+  <div class="menu-liste" style="margin-top:8px">
+   <a class="btn-choix" style="text-decoration:none;display:block" href="${LIENS.coach}" target="_blank" rel="noopener">🎓 Coaching parental — être accompagné pas à pas (Jean-Michel Houée)</a>
+   <a class="btn-choix" style="text-decoration:none;display:block" href="${LIENS.livre}" target="_blank" rel="noopener">📖 Le livre : « Stratégies pour devenir un leader adolescent »</a>
+   <a class="btn-choix" style="text-decoration:none;display:block" href="${LIENS.presse}" target="_blank" rel="noopener">📺 Le reportage Réunion la 1ère sur ses ateliers en collège</a>
+  </div>
+ </div>`;
+ annoncer("Espace parents. Cinq sections : repérer les signaux. Ouvrir le dialogue. Le bon réflexe, un quiz qui change à chaque partie. Agir avec l'école. Et le registre des faits.");
+}
+function r_signaux(){vuP("signaux");
+ app.innerHTML=`${tete("🔎 Repérer les signaux","rParMenu")}
+ <div class="carte bloc">
+  <p style="font-size:.93rem">Un enfant harcelé parle rarement de lui-même : la honte et les menaces le musellent. C'est donc le corps et le comportement qui parlent. <b>Un signal isolé ne prouve rien — c'est le faisceau qui compte</b>, surtout si plusieurs apparaissent en même temps ou durent.</p>
+ </div>
+ <div class="carte bloc">
+  ${SIGNAUX.map(([e,t])=>`<div class="pilier" style="margin-bottom:8px"><div class="num" style="background:var(--corail-p);font-size:1.1rem" aria-hidden="true">${e}</div><p style="font-size:.9rem;padding-top:8px">${t}</p></div>`).join("")}
+ </div>
+ <div class="carte encadre enc-info" style="margin-top:0">
+  💡 <b>Le réflexe expert :</b> face à un faisceau de signaux, on n'interroge pas frontalement (« Est-ce qu'on te harcèle ?? ») — on observe, on note les faits datés dans le registre, et on ouvre le dialogue en douceur. Section suivante →
+ </div>
+ <div class="espace"></div>
+ ${blocFlash("signaux")}
+ <button class="btn btn-jaune btn-large" onclick="aller(r_dialogue)">💬 Ouvrir le dialogue →</button>`;
+ lancerFlash("signaux");
+ annoncer("Repérer les signaux. Un enfant harcelé parle rarement de lui-même : c'est le corps et le comportement qui parlent. Sommeil perturbé, affaires abîmées, maux de ventre le dimanche soir, trajets évités, chute des résultats, repli sur soi, angoisse aux notifications. Un signal isolé ne prouve rien : c'est le faisceau qui compte.");
+}
+function r_dialogue(){vuP("dialogue");
+ app.innerHTML=`${tete("💬 Ouvrir le dialogue","rParMenu")}
+ ${OUVREURS.map(o=>`<div class="carte bloc"><span class="etq etq-j">${o.t}</span><p style="font-size:.92rem">${o.p}</p></div>`).join("")}
+ <div class="carte bloc">
+  <span class="etq etq-c">Les phrases qui ferment (à éviter)</span>
+  <ul>${AEVITER.map(a=>`<li>${a}</li>`).join("")}</ul>
+ </div>
+ <div class="carte encadre enc-ok" style="margin-top:0">💛 <b>La règle d'or :</b> d'abord accueillir tout, sans interrompre ni minimiser ni chercher de solution. Un enfant qui se sent cru et pris au sérieux redira les choses. Un enfant corrigé ou brusqué se taira — parfois pour des mois.</div>
+ <div class="espace"></div>
+ ${blocFlash("dialogue")}
+ <button class="btn btn-indigo btn-large" onclick="aller(r_quizpar)">🧭 Testez vos réflexes →</button>`;
+ lancerFlash("dialogue");
+ annoncer("Ouvrir le dialogue. L'ouverture douce, inspirée de la communication non violente : je décris ce que j'observe, sans jugement. Je dis mon sentiment : je suis inquiet parce que tu comptes pour moi. Et je propose un choix : tu veux m'en parler maintenant, ou ce soir ? À éviter : pourquoi tu ne te défends pas, ignore-les, ou promettre le secret absolu. La règle d'or : accueillir tout, sans interrompre.");
+}
+function r_ecole(){vuP("ecole");
+ app.innerHTML=`${tete("🏫 Agir avec l'école","rParMenu")}
+ <div class="carte bloc">${DEMARCHES.map(([n,t,d])=>`
+  <div class="pilier"><div class="num">${n}</div><div><b>${t}</b><p class="note">${d}</p></div></div>`).join("")}
+ </div>
+ <div class="carte encadre enc-info" style="margin-top:0">📞 À chaque étape, le <b>3018</b> peut vous conseiller, gratuitement. Vous n'êtes pas seuls face à l'institution.</div>
+ <div class="espace"></div>
+ ${blocFlash("ecole")}
+ <button class="btn btn-indigo btn-large" onclick="aller(r_registre)">📋 Ouvrir le registre des faits →</button>`;
+ lancerFlash("ecole");
+ annoncer("Agir avec l'école, en six étapes. Un : consigner les faits datés dans le registre. Deux : rendez-vous avec le professeur principal, la CPE, puis la direction. Trois : confirmer chaque échange par un mail daté, l'écrit engage. Quatre : sans réponse, le référent harcèlement de l'académie, et le 30 18. Cinq : pour le cyberharcèlement, captures d'écran et 30 18. Six : pour les faits graves, le dépôt de plainte est possible, le harcèlement scolaire est un délit.");
+}
+
+/* ---- Registre des faits ---- */
+function r_registre(){vuP("registre");
+ app.innerHTML=`${tete("📋 Registre des faits","rParMenu")}
+ <div class="carte bloc">
+  <p class="note">Notez chaque incident, même « petit » : c'est la répétition qui caractérise le harcèlement, et c'est ce dossier daté qui permettra à l'école — puis si besoin à l'académie ou à la justice — d'agir. ${STOCK.ok?"Les données restent sur cet appareil, rien n'est envoyé.":"Ce navigateur ne permet pas d'enregistrer : les entrées seront perdues en fermant la page. Copiez le registre avant de partir."}</p>
+ </div>
+ <div class="carte">
+  <div class="champ"><label for="rg-date">Date des faits</label><input type="date" id="rg-date"></div>
+  <div class="champ"><label for="rg-lieu">Lieu (classe, cour, bus, en ligne…)</label><input type="text" id="rg-lieu" placeholder="Ex. : cour de récréation, groupe WhatsApp de la classe…"></div>
+  <div class="champ"><label for="rg-faits">Les faits, précisément (qui, quoi, mots exacts si possible)</label><textarea id="rg-faits" aria-describedby="rg-err" placeholder="Ex. : trois élèves de 4eB ont encerclé mon fils et…"></textarea><p class="erreur-champ" id="rg-err"></p></div>
+  <div class="champ"><label for="rg-tem">Témoins éventuels</label><input type="text" id="rg-tem" placeholder="Ex. : deux camarades, le surveillant de la cour…"></div>
+  <div class="champ"><label for="rg-act">Démarches faites (qui a été prévenu, quand)</label><input type="text" id="rg-act" placeholder="Ex. : mail à la CPE le 12/09, RDV demandé…"></div>
+  <button class="btn btn-indigo btn-large" onclick="ajouterFait()">Enregistrer cet incident</button>
+ </div>
+ <div id="rg-actions">${S.registre.length?`
+ <div class="espace"></div>
+ <button class="btn btn-ligne btn-large" onclick="copierRegistre()">📄 Copier tout le registre (pour un mail à l'école)</button>
+ <p class="msg" id="rg-msg" role="status"></p>
+ <label for="rg-texte" class="sr">Texte du registre à copier</label>
+ <textarea id="rg-texte" readonly hidden style="margin-top:10px;min-height:160px;font-size:.82rem"></textarea>`:""}</div>
+ <div id="rg-liste">${S.registre.map((e,i)=>({e,i})).reverse().map(({e,i})=>`
+  <div class="carte entree"><time>${esc(e.d)}</time><h4>${esc(e.l||"Lieu non précisé")}</h4>
+   <p>${esc(e.f)}</p>
+   ${e.t?`<p class="note">Témoins : ${esc(e.t)}</p>`:""}
+   ${e.a?`<p class="note">Démarches : ${esc(e.a)}</p>`:""}
+   <button class="suppr" onclick="supprimerFait(this,${i})">Supprimer cet incident</button>
+  </div>`).join("")||`<p class="note" style="text-align:center;margin-top:14px">Aucun incident consigné pour l'instant.</p>`}
+ </div>
+ <div class="espace"></div>
+ ${blocFlash("registre")}`;
+ lancerFlash("registre");
+ annoncer("Le registre des faits. Notez chaque incident daté : lieu, faits précis, témoins, démarches. C'est ce dossier factuel qui permettra à l'école d'agir. Les données restent sur cet appareil.");
+}
+function ajouterFait(){
+ const d=document.getElementById("rg-date").value,f=document.getElementById("rg-faits").value.trim();
+ if(!f){document.getElementById("rg-err").textContent="Décrivez d'abord les faits.";annoncer("Décrivez d'abord les faits.");document.getElementById("rg-faits").focus();return}
+ S.registre.push({d:d||new Date().toISOString().slice(0,10),
+  l:document.getElementById("rg-lieu").value.trim(),f,
+  t:document.getElementById("rg-tem").value.trim(),
+  a:document.getElementById("rg-act").value.trim()});
+ S.registre.sort((a,b)=>String(a.d).localeCompare(String(b.d)));
+ sauver();r_registre();direAuLecteur("Incident enregistré dans le registre.");annoncer("Incident enregistré dans le registre.");
+}
+function supprimerFait(btn,i){
+ if(btn.dataset.confirme!=="1"){btn.dataset.confirme="1";btn.textContent="Confirmer la suppression ?";return}
+ S.registre.splice(i,1);sauver();r_registre();direAuLecteur("Incident supprimé.");
+}
+function texteRegistre(){
+ return "REGISTRE DES FAITS — harcèlement scolaire\n(document établi par la famille)\n\n"+
+  S.registre.map((e,i)=>`Incident ${i+1} — ${e.d}\nLieu : ${e.l||"—"}\nFaits : ${e.f}\nTémoins : ${e.t||"—"}\nDémarches : ${e.a||"—"}`).join("\n\n");
+}
+function copierRegistre(){
+ const tx=texteRegistre(),msg=document.getElementById("rg-msg"),zone=document.getElementById("rg-texte");
+ const repli=()=>{zone.hidden=false;zone.value=tx;zone.focus();zone.select();msg.classList.add("err");msg.textContent="Copie automatique impossible : le texte est sélectionné ci-dessous, copiez-le (Ctrl+C ou appui long).";};
+ if(navigator.clipboard&&navigator.clipboard.writeText){
+  navigator.clipboard.writeText(tx).then(()=>{zone.hidden=true;msg.classList.remove("err");msg.textContent="Registre copié. Collez-le dans un mail ou un document.";annoncer("Registre copié.")},repli);
+ } else repli();
+}
+
+/* ================= DÉMARRAGE ================= */
+majBoutonVocal();
+rAccueil();
+</script>
+</body>
+</html>
