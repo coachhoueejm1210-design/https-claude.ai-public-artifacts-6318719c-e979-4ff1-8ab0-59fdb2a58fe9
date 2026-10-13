@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Pack Phénix — Face au harcèlement scolaire</title>
+<meta name="description" content="30 jours pour passer de l'inquiétude à l'action face au harcèlement scolaire. Une méthode pour le parent, un espace gratuit pour l'ado. Conçu à La Réunion. Satisfait ou remboursé 14 jours.">
+<meta property="og:title" content="Pack Phénix — Votre ado dit que « ça va ». Et si ce n'était pas vrai ?">
+<meta property="og:description" content="La méthode jour par jour pour les parents face au harcèlement scolaire. Essayez la démo gratuite.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Karla:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+/* Page de vente : une colonne sur mobile, deux colonnes au-delà de 880 px.
+   Palette reprise d'Ou Lé Pa Tousèl pour que la démo et la page parlent la même langue. */
+:root{
+  --indigo:#2b3a8f; --indigo-f:#1d2a6b; --indigo-p:#e3e8fb;
+  --jaune:#ffc93c; --jaune-p:#fff3d1; --jaune-f:#7a5900;
+  --corail:#ff7d6b; --corail-f:#c2412f; --corail-p:#ffe6e1;
+  --vert:#166534; --vert-p:#dcfce7;
+  --encre:#1c2340; --encre2:#4e5680; --ligne:#dfe4f5;
+  --fond:#f6f7fc; --blanc:#ffffff;
+  --r:20px;
+  --ombre:0 18px 40px -20px rgba(29,42,107,.35), 0 2px 8px -4px rgba(29,42,107,.12);
+  color-scheme:light;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Karla',system-ui,-apple-system,'Segoe UI',sans-serif;color:var(--encre);background:var(--fond);line-height:1.6;font-size:17px}
+h1,h2,h3{font-family:'Space Grotesk',system-ui,sans-serif;letter-spacing:-.015em;line-height:1.12;text-wrap:balance}
+a{color:var(--indigo-f)}
+img{max-width:100%}
+:focus-visible{outline:3px solid var(--indigo-f);outline-offset:3px;border-radius:10px}
+.wrap{max-width:1080px;margin:0 auto;padding-inline:20px}
+section{padding-block:64px}
+.eyebrow{font-size:.78rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--corail-f)}
+.lead{font-size:1.15rem;color:var(--encre2);max-width:60ch}
+.center{text-align:center}
+.center .lead{margin-inline:auto}
+
+/* ---- barre haute ---- */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:rgba(246,247,252,.9);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--ligne)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:10px}
+.marque{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--indigo-f)}
+.marque b{font-family:'Space Grotesk';font-size:1.1rem}
+.marque small{display:block;font-size:.66rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--encre2)}
+
+/* ---- boutons ---- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-weight:800;font-size:1.02rem;padding:16px 24px;border-radius:16px;text-decoration:none;border:none;cursor:pointer;font-family:inherit;min-height:54px;transition:transform .12s,box-shadow .12s;text-align:center}
+.btn:active{transform:scale(.97)}
+.btn-carte{background:var(--indigo);color:#fff;box-shadow:0 10px 24px -10px rgba(43,58,143,.7)}
+.btn-carte:hover{background:var(--indigo-f)}
+.btn-paypal{background:#fff;color:var(--indigo-f);border:2px solid var(--ligne)}
+.btn-paypal:hover{border-color:var(--indigo)}
+.btn-petit{padding:10px 16px;min-height:44px;font-size:.92rem}
+.btn svg{width:20px;height:20px;flex:none}
+.achat{display:flex;flex-direction:column;gap:10px;max-width:440px}
+.achat-note{font-size:.86rem;color:var(--encre2);margin-top:4px}
+.puces{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.puce{display:inline-flex;align-items:center;gap:6px;background:#fff;border:1px solid var(--ligne);border-radius:999px;padding:6px 12px;font-size:.85rem;font-weight:700;color:var(--encre)}
+.puce i{width:8px;height:8px;border-radius:50%;background:var(--vert);display:inline-block}
+.config-msg{font-size:.85rem;font-weight:700;color:var(--corail-f);min-height:1.2em}
+
+/* ---- hero ---- */
+.hero{padding-block:48px 56px;background:
+  radial-gradient(700px 380px at 92% 0%, #ffe9b3 0%, transparent 60%),
+  radial-gradient(800px 480px at -10% 30%, #dde5ff 0%, transparent 62%), var(--fond)}
+.hero .wrap{display:grid;gap:36px;align-items:center}
+.hero h1{font-size:clamp(2rem,1.4rem + 2.8vw,3.3rem);color:var(--indigo-f);margin:12px 0 16px}
+.hero h1 em{font-style:normal;background:linear-gradient(transparent 62%,var(--jaune) 62%)}
+.prix-ligne{display:flex;align-items:baseline;gap:10px;margin:22px 0 14px}
+.prix-ligne b{font-family:'Space Grotesk';font-size:2.4rem;color:var(--indigo-f)}
+.prix-ligne span{color:var(--encre2);font-weight:700}
+
+/* ---- téléphone de démo ---- */
+.tel{position:relative;width:min(360px,100%);margin-inline:auto;aspect-ratio:9/18.5;max-width:100%;background:#11163a;border-radius:44px;padding:12px;box-shadow:0 40px 80px -30px rgba(29,42,107,.6),inset 0 0 0 2px #2b3170}
+.tel::before{content:"";position:absolute;top:18px;left:50%;transform:translateX(-50%);width:90px;height:22px;border-radius:12px;background:#11163a;z-index:2}
+.ecran{width:100%;height:100%;border-radius:34px;overflow:hidden;background:#f3f6ff;position:relative}
+.ecran iframe{width:100%;height:100%;border:0;display:block}
+.ecran .repli{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:24px;text-align:center;color:var(--indigo-f);font-weight:700;z-index:0}
+.ecran iframe{position:relative;z-index:1;background:transparent}
+.etiquette-demo{position:absolute;top:-14px;right:-8px;z-index:3;background:var(--jaune);color:var(--indigo-f);font-weight:800;font-size:.8rem;padding:6px 12px;border-radius:999px;box-shadow:0 6px 16px -6px rgba(0,0,0,.3);transform:rotate(4deg)}
+
+/* ---- signes ---- */
+.signes{background:#fff}
+.grille-signes{display:grid;gap:14px;margin-top:28px}
+.signe{display:flex;gap:14px;align-items:flex-start;background:var(--fond);border-radius:16px;padding:18px}
+.signe .ic{width:44px;height:44px;border-radius:14px;background:var(--corail-p);display:grid;place-items:center;font-size:1.3rem;flex:none}
+.message-cle{margin-top:28px;background:var(--indigo-f);color:#fff;border-radius:var(--r);padding:26px;font-size:1.15rem;font-weight:500}
+.message-cle b{color:var(--jaune)}
+
+/* ---- démo ---- */
+.demo .wrap{display:grid;gap:36px;align-items:center}
+.essais{list-style:none;display:flex;flex-direction:column;gap:12px;margin-top:20px}
+.essais li{display:flex;gap:12px;align-items:flex-start;background:#fff;border:1px solid var(--ligne);border-radius:16px;padding:14px 16px}
+.essais .n{width:30px;height:30px;border-radius:10px;background:var(--jaune-p);color:var(--jaune-f);font-family:'Space Grotesk';font-weight:700;display:grid;place-items:center;flex:none}
+
+/* ---- contenu ---- */
+.contenu{background:#fff}
+.deux{display:grid;gap:18px;margin-top:28px}
+.boite{border-radius:var(--r);padding:26px;border:1px solid var(--ligne);background:var(--fond)}
+.boite h3{font-size:1.3rem;color:var(--indigo-f);margin:8px 0 14px}
+.boite ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.boite li{display:flex;gap:10px;align-items:flex-start}
+.boite li::before{content:"";width:20px;height:20px;flex:none;margin-top:3px;border-radius:50%;background:var(--vert-p) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 12.5l4 4 8-9' fill='none' stroke='%23166534' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/14px no-repeat}
+.tag{display:inline-block;font-size:.72rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+.tag-p{background:var(--indigo-p);color:var(--indigo-f)}
+.tag-a{background:var(--jaune-p);color:var(--jaune-f)}
+.tag-g{background:var(--vert-p);color:var(--vert)}
+
+/* ---- parcours 30 jours ---- */
+.etapes{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;margin-top:28px}
+.etape{border-radius:14px;padding:16px 14px;color:var(--encre)}
+.etape .j{font-family:'Space Grotesk';font-weight:700;font-size:.82rem;letter-spacing:.04em}
+.etape b{display:block;font-family:'Space Grotesk';font-size:1.1rem;margin:4px 0}
+.etape p{font-size:.88rem;color:var(--encre2);line-height:1.4}
+.barre{display:grid;grid-template-columns:7fr 7fr 7fr 9fr;gap:6px;margin-top:10px}
+.barre span{height:8px;border-radius:4px}
+@media (max-width:700px){.etapes{grid-template-columns:repeat(2,minmax(0,1fr))}.barre{display:none}}
+
+/* ---- comment ---- */
+.pas{display:grid;gap:14px;margin-top:28px;counter-reset:pas}
+.pas li{list-style:none;display:flex;gap:16px;align-items:flex-start;background:#fff;border:1px solid var(--ligne);border-radius:16px;padding:18px}
+.pas li::before{counter-increment:pas;content:counter(pas);width:38px;height:38px;border-radius:12px;background:var(--indigo);color:#fff;font-family:'Space Grotesk';font-weight:700;display:grid;place-items:center;flex:none}
+
+/* ---- auteur ---- */
+.auteur{background:var(--indigo-f);color:#fff}
+.auteur .wrap{display:grid;gap:28px;align-items:center}
+.auteur h2{color:#fff}
+.auteur .eyebrow{color:var(--jaune)}
+.auteur p{color:#dfe4ff}
+.titres{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0}
+.titres span{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:999px;padding:6px 12px;font-size:.86rem;font-weight:700}
+.auteur .btn-paypal{background:transparent;color:#fff;border-color:rgba(255,255,255,.4)}
+.citation{background:rgba(255,255,255,.08);border-radius:var(--r);padding:26px;font-family:'Space Grotesk';font-size:1.3rem;line-height:1.35}
+.citation small{display:block;font-family:'Karla';font-size:.9rem;color:#c7cdf2;margin-top:12px}
+
+/* ---- offre ---- */
+.offre-carte{max-width:620px;margin:28px auto 0;background:#fff;border-radius:28px;box-shadow:var(--ombre);border:2px solid var(--indigo-p);overflow:hidden}
+.offre-tete{background:var(--indigo);color:#fff;padding:26px 28px}
+.offre-tete h3{font-size:1.5rem}
+.offre-tete .prix{display:flex;align-items:baseline;gap:10px;margin-top:10px}
+.offre-tete .prix b{font-family:'Space Grotesk';font-size:3rem;line-height:1}
+.offre-tete .prix span{color:#dfe4ff;font-weight:700}
+.offre-corps{padding:26px 28px}
+.offre-corps .boite{background:transparent;border:0;padding:0}
+.offre-corps .achat{max-width:none;margin-top:22px}
+.garantie{display:flex;gap:16px;align-items:flex-start;margin-top:22px;background:var(--vert-p);border:1.5px solid #86efac;border-radius:18px;padding:18px}
+.sceau{width:64px;height:64px;flex:none}
+.garantie h4{font-family:'Space Grotesk';font-size:1.1rem;color:var(--vert)}
+.garantie p{font-size:.95rem;color:#1d3b28}
+
+/* ---- FAQ ---- */
+.faq{max-width:760px;margin:28px auto 0;display:flex;flex-direction:column;gap:10px}
+.faq details{background:#fff;border:1px solid var(--ligne);border-radius:16px;padding:0 18px}
+.faq summary{cursor:pointer;list-style:none;font-weight:800;padding:18px 32px 18px 0;position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:0;top:14px;font-size:1.4rem;color:var(--indigo)}
+.faq details[open] summary::after{content:"–"}
+.faq details p{padding-bottom:18px;color:var(--encre2)}
+
+/* ---- fin ---- */
+.final{background:radial-gradient(600px 300px at 50% 0%, #ffe9b3, transparent 70%), var(--fond)}
+.final h2{font-size:clamp(1.8rem,1.3rem + 2vw,2.6rem);color:var(--indigo-f)}
+.final .achat{margin:26px auto 0}
+.securite{max-width:760px;margin:40px auto 0;background:var(--corail-p);border:1.5px solid #ffb3a7;border-radius:18px;padding:18px;font-size:.92rem}
+.securite b{color:var(--corail-f)}
+footer{padding-block:28px 110px;font-size:.85rem;color:var(--encre2);border-top:1px solid var(--ligne)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:10px 22px;justify-content:space-between}
+
+/* ---- barre d'achat collante (mobile) ---- */
+.colle{position:fixed;left:0;right:0;bottom:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid var(--ligne);padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));display:flex;align-items:center;justify-content:space-between;gap:12px;transform:translateY(110%);transition:transform .25s}
+.colle.vue{transform:none}
+.colle b{font-family:'Space Grotesk';font-size:1.2rem;color:var(--indigo-f)}
+.colle small{display:block;font-size:.74rem;color:var(--encre2);font-weight:700}
+
+@media (min-width:880px){
+  .hero .wrap{grid-template-columns:1.15fr .85fr}
+  .demo .wrap{grid-template-columns:.95fr 1.05fr}
+  .grille-signes{grid-template-columns:1fr 1fr}
+  .deux{grid-template-columns:1.2fr .8fr}
+  .pas{grid-template-columns:1fr 1fr}
+  .auteur .wrap{grid-template-columns:1.2fr .8fr}
+  .colle{display:none}
+  footer{padding-bottom:28px}
+}
+.lien-demo-mobile{display:inline-block;margin-top:14px;font-weight:800}
+@media (max-width:879px){
+  .hero .tel{display:none}
+  .marque small{display:none}
+  .top .btn{white-space:nowrap}
+  .tel{width:min(320px,100%)}
+}
+@media (min-width:880px){.lien-demo-mobile{display:none}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<header class="top">
+ <div class="wrap">
+  <a class="marque" href="#haut" aria-label="Pack Phénix, retour en haut">
+   <svg width="34" height="38" viewBox="0 0 46 52" aria-hidden="true"><polygon points="23,10 -6,0 -6,20" fill="#ffc93c" opacity=".55"/><polygon points="23,10 52,0 52,20" fill="#ffc93c" opacity=".55"/><rect x="17" y="6" width="12" height="9" rx="2" fill="#ffc93c"/><path d="M18 15 L28 15 L31 46 L15 46 Z" fill="#2b3a8f"/><rect x="19.5" y="22" width="7" height="4" rx="1.5" fill="#fff" opacity=".85"/><rect x="18.5" y="31" width="9" height="4" rx="1.5" fill="#fff" opacity=".85"/><path d="M8 46 Q23 40 38 46 L38 50 L8 50 Z" fill="#5a72d8" opacity=".5"/></svg>
+   <span><b>Pack Phénix</b><small>Face au harcèlement · La Réunion</small></span>
+  </a>
+  <a class="btn btn-carte btn-petit" href="#offre">Voir l'offre</a>
+ </div>
+</header>
+
+<main id="haut">
+<!-- ============ HERO ============ -->
+<section class="hero">
+ <div class="wrap">
+  <div>
+   <p class="eyebrow">Pour les parents d'ados de 10 à 17 ans</p>
+   <h1>Votre ado dit que « ça va ». <em>Et si ce n'était pas vrai ?</em></h1>
+   <p class="lead">Le Pack Phénix vous donne un plan, jour après jour, pour comprendre ce qui se passe, rouvrir le dialogue, faire agir le collège et reconstruire la confiance. Et un espace gratuit pour votre ado.</p>
+   <div class="prix-ligne"><b>97 €</b><span>une seule fois · accès à vie</span></div>
+   <div class="achat">
+    <a class="btn btn-carte js-stripe" href="#">
+     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
+     Obtenir le Pack — payer par carte</a>
+    <a class="btn btn-paypal js-paypal" href="#">Payer avec PayPal</a>
+    <p class="config-msg" role="status"></p>
+   </div>
+   <div class="puces">
+    <span class="puce"><i></i>Satisfait ou remboursé 14 jours</span>
+    <span class="puce"><i></i>Paiement sécurisé</span>
+    <span class="puce"><i></i>Vos notes restent sur votre téléphone</span>
+   </div>
+   <a class="lien-demo-mobile" href="#demo">Essayer la démo gratuite ↓</a>
+  </div>
+  <div>
+   <div class="tel">
+    <span class="etiquette-demo">Démo en direct ↓</span>
+    <div class="ecran">
+     <div class="repli"><span>La démo ne s'affiche pas ?</span><a class="btn btn-carte btn-petit js-demo-lien" href="#" target="_blank" rel="noopener">Ouvrir la démo</a></div>
+     <iframe class="js-demo" title="Démo interactive : l'application Ou Lé Pa Tousèl" loading="lazy"></iframe>
+    </div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- ============ SIGNES ============ -->
+<section class="signes">
+ <div class="wrap">
+  <p class="eyebrow">Vous reconnaissez ces signes ?</p>
+  <h2 style="font-size:clamp(1.6rem,1.2rem + 1.6vw,2.3rem);margin-top:8px">Les ados harcelés parlent rarement. Leur quotidien parle pour eux.</h2>
+  <div class="grille-signes">
+   <div class="signe"><span class="ic" aria-hidden="true">🤢</span><p>Mal au ventre le dimanche soir, et plus du tout pendant les vacances.</p></div>
+   <div class="signe"><span class="ic" aria-hidden="true">📱</span><p>Il cache son téléphone ou sursaute à chaque notification.</p></div>
+   <div class="signe"><span class="ic" aria-hidden="true">🚪</span><p>Elle ne voit plus ses amis, ses notes baissent, elle répond « c'est rien ».</p></div>
+   <div class="signe"><span class="ic" aria-hidden="true">🏫</span><p>Vous avez déjà appelé le collège, et rien n'a bougé.</p></div>
+  </div>
+  <p class="message-cle">Vous n'avez rien raté. Les ados sont experts pour cacher ce qui leur fait honte. Ce qui manque, ce n'est pas votre amour : <b>c'est un plan.</b></p>
+ </div>
+</section>
+
+<!-- ============ DÉMO ============ -->
+<section class="demo" id="demo">
+ <div class="wrap">
+  <div>
+   <p class="eyebrow">Essayez avant d'acheter</p>
+   <h2 style="font-size:clamp(1.6rem,1.2rem + 1.6vw,2.3rem);margin-top:8px">Testez gratuitement l'espace de votre ado, ici même.</h2>
+   <p class="lead" style="margin-top:12px">« Ou lé pa tousèl », en créole : <i>tu n'es pas tout seul</i>. Cette application est incluse dans le pack, et votre ado peut l'utiliser gratuitement. Trois choses à essayer dans le téléphone :</p>
+   <ol class="essais">
+    <li><span class="n">1</span><span><b>« Je suis un parent » → « Le bon réflexe ».</b> Six situations réelles. Elles changent à chaque partie.</span></li>
+    <li><span class="n">2</span><span><b>« Repérer les signaux ».</b> Puis la question flash en bas de l'onglet.</span></li>
+    <li><span class="n">3</span><span><b>Le bouton SOS.</b> Les numéros d'aide, toujours à un clic.</span></li>
+   </ol>
+   <p style="margin-top:18px"><a class="js-demo-lien" href="#" target="_blank" rel="noopener">Ouvrir la démo en plein écran ↗</a></p>
+  </div>
+  <div class="tel" aria-hidden="false">
+   <div class="ecran">
+    <div class="repli"><span>La démo ne s'affiche pas ?</span><a class="btn btn-carte btn-petit js-demo-lien" href="#" target="_blank" rel="noopener">Ouvrir la démo</a></div>
+    <iframe class="js-demo" title="Démo interactive en grand : l'application Ou Lé Pa Tousèl" loading="lazy"></iframe>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- ============ CONTENU ============ -->
+<section class="contenu">
+ <div class="wrap">
+  <p class="eyebrow">Ce que contient le pack</p>
+  <h2 style="font-size:clamp(1.6rem,1.2rem + 1.6vw,2.3rem);margin-top:8px">Un plan pour vous. Un refuge pour votre ado.</h2>
+  <div class="deux">
+   <div class="boite">
+    <span class="tag tag-p">Pour vous, parent</span>
+    <h3>Phénix 30 Jours</h3>
+    <ul>
+     <li>30 séances de 15 à 25 minutes, une par jour</li>
+     <li>Les mots qui rouvrent la parole, et ceux qui la ferment</li>
+     <li>Le pacte de confiance : agir sans jamais le faire dans le dos de votre enfant</li>
+     <li>5 modèles de courrier prêts à envoyer à l'établissement, et l'escalade pas à pas si rien ne bouge</li>
+     <li>Un carnet personnel et un baromètre familial pour voir que ça bouge</li>
+     <li>Une respiration guidée à la voix pour garder votre calme</li>
+     <li>Utilisable au son et au lecteur d'écran, aussi pour les parents malvoyants</li>
+    </ul>
+   </div>
+   <div class="boite">
+    <span class="tag tag-a">Pour votre ado, gratuit</span>
+    <h3>Ou Lé Pa Tousèl</h3>
+    <ul>
+     <li>Comprendre ce qu'est le harcèlement, et pourquoi ce n'est jamais sa faute</li>
+     <li>Un quiz de réflexes qui se renouvelle à chaque partie</li>
+     <li>Une boîte à outils : respiration, posture, phrases qui protègent</li>
+     <li>Un bouton SOS avec les numéros d'aide, toujours visible</li>
+    </ul>
+   </div>
+  </div>
+
+  <h3 style="margin-top:44px;font-size:1.3rem;color:var(--indigo-f)">Les 30 jours, en 4 étapes</h3>
+  <div class="etapes">
+   <div class="etape" style="background:#e3eef0"><span class="j" style="color:#1b5e63">JOURS 1–7</span><b>Comprendre</b><p>Voir ce qui se joue vraiment, et constituer un dossier de faits.</p></div>
+   <div class="etape" style="background:#e1f0e7"><span class="j" style="color:#2f7253">JOURS 8–14</span><b>Dialoguer</b><p>Rouvrir la parole avec un ado qui s'est refermé.</p></div>
+   <div class="etape" style="background:#fbeedc"><span class="j" style="color:#8a4f12">JOURS 15–21</span><b>Agir</b><p>Faire bouger l'établissement, par écrit et méthodiquement.</p></div>
+   <div class="etape" style="background:#fbe7e1"><span class="j" style="color:#b8452d">JOURS 22–30</span><b>Reconstruire</b><p>Remettre de la confiance et de l'élan à la maison.</p></div>
+  </div>
+  <div class="barre" aria-hidden="true"><span style="background:#1b5e63"></span><span style="background:#2f7253"></span><span style="background:#a8651c"></span><span style="background:#b8452d"></span></div>
+ </div>
+</section>
+
+<!-- ============ COMMENT ============ -->
+<section>
+ <div class="wrap">
+  <p class="eyebrow">Comment ça marche</p>
+  <h2 style="font-size:clamp(1.6rem,1.2rem + 1.6vw,2.3rem);margin-top:8px">Ce soir, vous pouvez commencer.</h2>
+  <ol class="pas">
+   <li><span><b>Vous achetez le pack.</b> Vous recevez votre lien d'accès par e-mail.</span></li>
+   <li><span><b>Vous ouvrez le jour 1 ce soir.</b> 20 minutes, une seule étape.</span></li>
+   <li><span><b>Chaque jour, une nouvelle séance.</b> Vous avancez à votre rythme, rien ne se verrouille.</span></li>
+   <li><span><b>Au jour 30,</b> vous avez un dossier daté, un dialogue rouvert et un plan pour la suite.</span></li>
+  </ol>
+ </div>
+</section>
+
+<!-- ============ AUTEUR ============ -->
+<section class="auteur">
+ <div class="wrap">
+  <div>
+   <p class="eyebrow">Qui a conçu cette méthode ?</p>
+   <h2 style="font-size:clamp(1.6rem,1.2rem + 1.6vw,2.3rem);margin-top:8px">Jean-Michel Houée</h2>
+   <div class="titres">
+    <span>Coach certifié RNCP niveau 6</span><span>Éducateur spécialisé (DEES)</span><span>Formateur d'adultes (TP FPA)</span><span>25 ans auprès des jeunes</span>
+   </div>
+   <p>Depuis 25 ans, j'accompagne des jeunes et leurs familles dans le médico-social à La Réunion. J'interviens dans les collèges avec des ateliers de prévention du harcèlement, qui ont fait l'objet d'un reportage de Réunion La 1ère.</p>
+   <p style="margin-top:12px">Phénix rassemble ce que j'ai vu fonctionner : un adulte qui tient bon, des mots justes, et des démarches écrites que l'établissement ne peut pas ignorer.</p>
+   <div style="margin-top:20px"><a class="btn btn-paypal btn-petit" href="https://la1ere.franceinfo.fr/reunion/des-lycees-de-la-reunion-luttent-activement-contre-le-harcelement-scolaire-1653779.html" target="_blank" rel="noopener">Voir le reportage Réunion La 1ère ↗</a></div>
+  </div>
+  <div class="citation">Ce que Phénix rassemble :<small style="font-size:1rem;line-height:1.7;color:#fff;margin-top:14px">· un adulte qui tient bon<br>· les mots justes au bon moment<br>· des démarches écrites que l'établissement ne peut pas ignorer</small></div>
+ </div>
+</section>
+
+<!-- ============ OFFRE ============ -->
+<section id="offre">
+ <div class="wrap center">
+  <p class="eyebrow">Votre offre</p>
+  <h2 style="font-size:clamp(1.6rem,1.2rem + 1.6vw,2.3rem);margin-top:8px">Tout le pack, une seule fois, pour toujours.</h2>
+  <div class="offre-carte" style="text-align:left">
+   <div class="offre-tete">
+    <h3>Pack Phénix</h3>
+    <div class="prix"><b>97 €</b><span>paiement unique, sans abonnement</span></div>
+   </div>
+   <div class="offre-corps">
+    <div class="boite">
+     <ul>
+      <li>Phénix 30 Jours, le parcours complet du parent</li>
+      <li>Ou Lé Pa Tousèl, l'espace de votre ado</li>
+      <li>Les 5 modèles de courrier à l'établissement</li>
+      <li>Accès à vie, sur téléphone et ordinateur</li>
+      <li>Confidentiel : vos notes restent sur votre appareil</li>
+     </ul>
+    </div>
+    <div class="achat">
+     <a class="btn btn-carte js-stripe" href="#">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
+      Obtenir le Pack — payer par carte</a>
+     <a class="btn btn-paypal js-paypal" href="#">Payer avec PayPal</a>
+     <p class="config-msg" role="status"></p>
+     <p class="achat-note">Paiement sécurisé par Stripe ou PayPal. Votre lien d'accès arrive par e-mail.</p>
+    </div>
+    <div class="garantie">
+     <svg class="sceau" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="#166534"/><circle cx="32" cy="32" r="24" fill="none" stroke="#dcfce7" stroke-width="2" stroke-dasharray="3 3"/><text x="32" y="31" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-weight="700" font-size="16" fill="#fff">14</text><text x="32" y="43" text-anchor="middle" font-family="Karla, sans-serif" font-weight="800" font-size="7" fill="#dcfce7" letter-spacing=".5">JOURS</text></svg>
+     <div>
+      <h4>Satisfait ou remboursé, 14 jours</h4>
+      <p>Faites les premières séances. Si la méthode ne vous convient pas, écrivez-moi dans les 14 jours suivant votre achat à <b class="js-mail">coachhoueejm1210@gmail.com</b> : je vous rembourse intégralement, sans justification.</p>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section style="background:#fff">
+ <div class="wrap">
+  <p class="eyebrow center">Questions fréquentes</p>
+  <h2 class="center" style="font-size:clamp(1.6rem,1.2rem + 1.6vw,2.3rem);margin-top:8px">Avant de vous lancer</h2>
+  <div class="faq">
+   <details><summary>Est-ce que ça remplace un psychologue ?</summary><p>Non. Phénix outille le parent, il ne soigne pas. En cas de détresse, un médecin ou un psychologue reste indispensable, et le 3114 répond 24 h/24.</p></details>
+   <details><summary>Et si ça ne me convient pas ?</summary><p>Vous avez 14 jours pour demander un remboursement intégral, sans justification. Un simple e-mail suffit.</p></details>
+   <details><summary>Mon enfant doit-il utiliser l'application ?</summary><p>Le parcours de 30 jours est pour vous. Ou Lé Pa Tousèl est là pour votre ado s'il le souhaite, gratuitement.</p></details>
+   <details><summary>Mes notes sont-elles envoyées quelque part ?</summary><p>Non. Tout reste sur votre appareil. Personne, pas même le coach, ne peut les lire.</p></details>
+   <details><summary>Combien de temps par jour ?</summary><p>De 15 à 25 minutes, à votre rythme. Rien ne se verrouille si vous sautez un jour.</p></details>
+   <details><summary>Et si mon enfant refuse d'en parler ?</summary><p>C'est prévu : plusieurs séances traitent précisément de ce silence et de la façon de rouvrir la parole sans forcer.</p></details>
+   <details><summary>Ça marche aussi en cas de cyberharcèlement ?</summary><p>Oui : une séance est consacrée aux preuves en ligne et au signalement, en lien avec le 3018 qui peut faire retirer des contenus.</p></details>
+  </div>
+ </div>
+</section>
+
+<!-- ============ FINAL ============ -->
+<section class="final">
+ <div class="wrap center">
+  <p class="eyebrow">Ce soir, une première étape</p>
+  <h2 style="margin-top:8px">Personne ne devrait affronter ça sans plan.</h2>
+  <div class="achat">
+   <a class="btn btn-carte js-stripe" href="#">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
+    Obtenir le Pack — 97 €</a>
+   <a class="btn btn-paypal js-paypal" href="#">Payer avec PayPal</a>
+   <p class="config-msg" role="status"></p>
+   <p class="achat-note">Satisfait ou remboursé 14 jours · Accès à vie</p>
+  </div>
+  <div class="securite" style="text-align:left">
+   <b>En cas de danger ou de détresse :</b> 3018 (harcèlement et cyberharcèlement, gratuit) · 3114 (souffrance psychique, 24 h/24) · 119 (enfance en danger) · 15 ou 112 (urgence vitale). Le Pack Phénix ne remplace ni l'équipe éducative, ni un professionnel de santé.
+  </div>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="wrap">
+  <span>© Jean-Michel Houée · Coaching parental · La Réunion</span>
+  <span><a class="js-mentions" href="#">Mentions légales</a> · <a class="js-cgv" href="#">Conditions générales de vente</a> · <a href="mailto:coachhoueejm1210@gmail.com">Contact</a></span>
+ </div>
+</footer>
+
+<div class="colle" id="colle" aria-hidden="true">
+ <div><b>97 €</b><small>Satisfait ou remboursé 14 jours</small></div>
+ <a class="btn btn-carte btn-petit" href="#offre" tabindex="-1">Obtenir le Pack</a>
+</div>
+
+<script>
+/* ============ À COMPLÉTER : vos liens ============ */
+const LIENS = {
+  stripe:   "https://buy.stripe.com/VOTRE-LIEN-STRIPE",          // lien de paiement Stripe (Payment Link)
+  paypal:   "https://www.paypal.com/ncp/payment/VOTRE-LIEN-PAYPAL", // bouton ou lien PayPal
+  demo:     "https://harcelement-ou-le-pa-touseul.netlify.app",  // application de démo
+  mentions: "",  // page Mentions légales (obligatoire pour vendre en ligne)
+  cgv:      ""   // page Conditions générales de vente
+};
+/* ================================================= */
+
+const aConfigurer = u => !u || /VOTRE-LIEN/.test(u);
+function brancher(sel, url, nom){
+  document.querySelectorAll(sel).forEach(a=>{
+    if(aConfigurer(url)){
+      a.addEventListener("click", e=>{
+        e.preventDefault();
+        const msg = a.closest(".achat")?.querySelector(".config-msg");
+        if(msg) msg.textContent = "Le lien de paiement " + nom + " n'est pas encore configuré.";
+      });
+    } else {
+      a.href = url; a.target = "_blank"; a.rel = "noopener";
+    }
+  });
+}
+brancher(".js-stripe", LIENS.stripe, "par carte");
+brancher(".js-paypal", LIENS.paypal, "PayPal");
+document.querySelectorAll(".js-demo").forEach(f=>{ f.src = LIENS.demo; });
+document.querySelectorAll(".js-demo-lien").forEach(a=>{ a.href = LIENS.demo; });
+for (const [cls, url] of [[".js-mentions", LIENS.mentions], [".js-cgv", LIENS.cgv]]) {
+  const a = document.querySelector(cls);
+  if (url) a.href = url; else a.removeAttribute("href");
+}
+
+/* Barre d'achat sur mobile : visible une fois le hero passé, masquée sur la section offre */
+const colle = document.getElementById("colle");
+const hero = document.querySelector(".hero"), offre = document.getElementById("offre");
+let heroVisible = true, offreVisible = false;
+const maj = () => colle.classList.toggle("vue", !heroVisible && !offreVisible);
+if ("IntersectionObserver" in window){
+  new IntersectionObserver(([e])=>{ heroVisible = e.isIntersecting; maj(); }).observe(hero);
+  new IntersectionObserver(([e])=>{ offreVisible = e.isIntersecting; maj(); }).observe(offre);
+}
+</script>
+</body>
+</html>
