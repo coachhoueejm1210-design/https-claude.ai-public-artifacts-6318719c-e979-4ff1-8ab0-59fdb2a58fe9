@@ -1,0 +1,121 @@
+ORDER BUMP SYSTEM.IO — Séance « Plan d'action Phénix »
+=====================================================
+
+Prix proposé : 47 € (à confirmer). Durée : 30 minutes, en visio.
+Ordre de réglage : 1. le lien de réservation → 2. l'offre → 3. le bump → 4. l'automatisation → 5. un test.
+
+
+1. LE LIEN DE RÉSERVATION (à préparer en premier)
+-------------------------------------------------
+Dans Calendly (ou l'agenda System.io), créer un type de rendez-vous :
+- Nom : Plan d'action Phénix — 30 min
+- Durée : 30 minutes · Lieu : Google Meet ou Zoom (lien généré automatiquement)
+- Fuseau horaire : Indian/Reunion (UTC+4). Les invités en métropole voient leur heure locale.
+- Délai minimum avant réservation : 24 h · Plage de réservation : 90 jours
+- Pause entre deux séances : 15 min
+- Question obligatoire à la réservation :
+  « En une phrase, qu'aimeriez-vous avoir clarifié à la fin de notre séance ? »
+- Case à cocher obligatoire (cf. CGV, article 14) :
+  « Je demande que la séance ait lieu avant la fin de mon délai de rétractation de 14 jours, et je reconnais perdre ce droit une fois la séance entièrement réalisée. »
+→ Copier le lien de réservation : il servira à l'étape 4.
+
+
+2. L'OFFRE DANS SYSTEM.IO
+-------------------------
+Produits → Créer une offre
+- Nom interne : Séance Plan d'action Phénix
+- Prix : 47 € · Paiement unique
+- Moyens de paiement : les mêmes que le Pack (Stripe + PayPal)
+
+
+3. LE BUMP SUR LE BON DE COMMANDE
+---------------------------------
+Tunnel Pack Phénix → étape « Bon de commande » → Paramètres → Order bump → activer.
+Sélectionner l'offre « Séance Plan d'action Phénix ».
+
+Titre (à côté de la case à cocher) :
+  Oui, je veux être accompagné(e) pour démarrer : séance individuelle de 30 minutes (+47 €)
+
+Description :
+  Vous n'avez pas à tout démêler seul(e). Pendant 30 minutes en visio, nous faisons le point ensemble sur la situation de votre enfant et nous construisons votre plan d'action pour les 15 prochains jours : quoi dire à votre ado, quoi demander à l'établissement, par où commencer.
+  Proposée uniquement sur cette page. Vous réservez votre créneau après le paiement, dans les 3 mois. Report gratuit jusqu'à 24 h avant.
+
+Conseils :
+- Laisser la case DÉCOCHÉE par défaut (obligatoire : une option payante ne peut pas être pré-cochée).
+- Garder le prix visible dans le titre : pas de surprise au paiement.
+- Vérifier sur mobile que le bloc s'affiche au-dessus du bouton de paiement.
+
+
+4. L'AUTOMATISATION (deuxième règle)
+------------------------------------
+Automatisations → Règles → Créer une règle
+
+Règle « Séance Phénix — réservation »
+  Déclencheur : Nouvelle vente → Offre « Séance Plan d'action Phénix »
+  Actions :
+    a) Ajouter le tag : seance-phenix
+    b) Envoyer l'e-mail : « Réservez votre séance Plan d'action Phénix » (texte ci-dessous)
+
+Règle « Séance Phénix — remboursement »
+  Déclencheur : Remboursement de la vente → Offre « Séance Plan d'action Phénix »
+  Action : Retirer le tag seance-phenix
+
+Relance facultative (si la séance n'est pas réservée) :
+  Campagne d'e-mails de 1 message, envoyée 7 jours après l'ajout du tag seance-phenix,
+  à retirer manuellement (ou via le tag seance-reservee) dès qu'un créneau est pris.
+
+
+5. E-MAIL DE RÉSERVATION
+------------------------
+OBJET : Réservez votre séance « Plan d'action Phénix »
+
+Bonjour [Prénom],
+
+Merci d'avoir choisi d'être accompagné(e) pour démarrer. Votre séance individuelle de 30 minutes est confirmée : il ne reste plus qu'à choisir votre créneau.
+
+▶ RÉSERVER MA SÉANCE
+[LIEN DE RÉSERVATION]
+
+Les horaires sont proposés à l'heure de La Réunion ; si vous êtes en métropole, le calendrier les affiche à votre heure locale.
+
+Pour en tirer le meilleur, trois petites choses avant notre rendez-vous :
+1. Faites le jour 1 de Phénix 30 Jours si ce n'est pas déjà fait : nous partirons de là.
+2. Notez les faits importants (dates, lieux, personnes) dans le registre de l'application.
+3. Prévoyez un moment au calme, sans votre ado à côté, avec un téléphone ou un ordinateur connecté.
+
+Une question me guidera pendant la séance, gardez-la en tête d'ici là : qu'est-ce qui, pour vous, aurait changé si dans 15 jours la situation allait un peu mieux ?
+
+Bon à savoir :
+- Votre séance est à réserver dans les 3 mois suivant l'achat.
+- Vous pouvez la déplacer gratuitement jusqu'à 24 h avant, depuis l'e-mail de confirmation du rendez-vous.
+- Si vous demandez le remboursement du Pack Phénix avant votre séance, la séance vous est aussi remboursée.
+
+À très vite,
+Jean-Michel Houée
+Coach professionnel certifié RNCP niveau 6 · Éducateur spécialisé (DEES)
+06 93 54 14 40 · coachhoueejm1210@gmail.com
+
+—
+En cas de danger ou de détresse : 3018 (harcèlement et cyberharcèlement, gratuit) · 3114 (souffrance psychique, 24 h/24) · 119 (enfance en danger) · 15 ou 112 (urgence vitale). La séance ne remplace ni l'équipe éducative, ni un professionnel de santé.
+
+
+6. E-MAIL DE RELANCE (facultatif, J+7)
+--------------------------------------
+OBJET : Votre séance vous attend toujours
+
+Bonjour [Prénom],
+
+Votre séance « Plan d'action Phénix » n'est pas encore réservée. Si le quotidien a pris le dessus, c'est bien normal.
+
+Quel serait le meilleur moment de votre semaine pour vous accorder ces 30 minutes ?
+
+▶ [LIEN DE RÉSERVATION]
+
+Jean-Michel
+
+
+7. TEST AVANT MISE EN LIGNE
+---------------------------
+- Passer une commande test AVEC le bump coché : vérifier les deux e-mails (accès + réservation) et les deux tags.
+- Passer une commande test SANS le bump : seul l'e-mail d'accès doit partir.
+- Rembourser la commande test : vérifier que les tags sont retirés.
