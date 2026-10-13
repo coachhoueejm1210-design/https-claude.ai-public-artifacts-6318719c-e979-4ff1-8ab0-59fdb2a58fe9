@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Bienvenue dans le Pack Phénix</title>
+<!-- Page réservée aux acheteurs : jamais indexée, jamais liée depuis le site public -->
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="referrer" content="no-referrer">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&family=Karla:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --indigo:#2b3a8f; --indigo-f:#1d2a6b; --indigo-p:#e3e8fb;
+  --jaune:#ffc93c; --jaune-p:#fff3d1; --jaune-f:#7a5900;
+  --corail-f:#c2412f; --corail-p:#ffe6e1;
+  --vert:#166534; --vert-p:#dcfce7;
+  --encre:#1c2340; --encre2:#4e5680; --ligne:#dfe4f5; --fond:#f6f7fc;
+  color-scheme:light;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Karla',system-ui,sans-serif;color:var(--encre);line-height:1.6;font-size:17px;background:
+  radial-gradient(700px 360px at 85% -5%, #ffe9b3 0%, transparent 60%),
+  radial-gradient(800px 460px at -10% 25%, #dde5ff 0%, transparent 62%), var(--fond)}
+h1,h2,h3{font-family:'Space Grotesk',system-ui,sans-serif;letter-spacing:-.015em;line-height:1.15;text-wrap:balance;color:var(--indigo-f)}
+a{color:var(--indigo-f)}
+:focus-visible{outline:3px solid var(--indigo-f);outline-offset:3px;border-radius:10px}
+.wrap{max-width:720px;margin:0 auto;padding:36px 20px 64px}
+.ok{width:64px;height:64px;border-radius:50%;background:var(--vert);display:grid;place-items:center;box-shadow:0 0 0 10px var(--vert-p)}
+.ok svg{width:34px;height:34px}
+h1{font-size:clamp(1.9rem,1.4rem + 2vw,2.7rem);margin:26px 0 10px}
+.lead{font-size:1.12rem;color:var(--encre2)}
+.carte{background:#fff;border:1px solid var(--ligne);border-radius:22px;padding:24px;margin-top:22px;box-shadow:0 14px 34px -22px rgba(29,42,107,.4)}
+.carte h2{font-size:1.25rem;margin-bottom:6px}
+.tag{display:inline-block;font-size:.72rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:999px;margin-bottom:10px}
+.tag-p{background:var(--indigo-p);color:var(--indigo-f)}
+.tag-a{background:var(--jaune-p);color:var(--jaune-f)}
+.btn{display:flex;align-items:center;justify-content:center;gap:10px;font-weight:800;font-size:1.05rem;padding:16px 22px;border-radius:16px;text-decoration:none;min-height:56px;margin-top:16px;text-align:center}
+.btn-1{background:var(--indigo);color:#fff;box-shadow:0 10px 24px -10px rgba(43,58,143,.7)}
+.btn-2{background:var(--jaune);color:var(--indigo-f)}
+.btn-3{background:#fff;color:var(--indigo-f);border:2px solid var(--ligne);font-size:.95rem;min-height:48px;padding:12px 18px}
+.lien-brut{display:block;margin-top:8px;font-size:.82rem;color:var(--encre2);word-break:break-all}
+.etapes{list-style:none;counter-reset:e;display:flex;flex-direction:column;gap:12px;margin-top:14px}
+.etapes li{display:flex;gap:14px;align-items:flex-start}
+.etapes li::before{counter-increment:e;content:counter(e);width:32px;height:32px;border-radius:10px;background:var(--indigo-p);color:var(--indigo-f);font-family:'Space Grotesk';font-weight:700;display:grid;place-items:center;flex:none}
+.astuce{background:var(--indigo-p);border-radius:14px;padding:14px 16px;font-size:.94rem;margin-top:14px}
+.garantie{background:var(--vert-p);border:1.5px solid #86efac;border-radius:18px;padding:18px 20px;margin-top:22px}
+.garantie b{color:var(--vert)}
+.securite{background:var(--corail-p);border:1.5px solid #ffb3a7;border-radius:18px;padding:18px 20px;margin-top:22px;font-size:.94rem}
+.securite b{color:var(--corail-f)}
+.msg{font-size:.88rem;font-weight:700;color:var(--vert);margin-top:8px;min-height:1.2em}
+footer{margin-top:36px;font-size:.85rem;color:var(--encre2)}
+</style>
+</head>
+<body>
+<main class="wrap">
+ <div class="ok" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5 10 17l9-10"/></svg></div>
+ <h1>Merci, votre Pack Phénix est prêt.</h1>
+ <p class="lead">Votre paiement est confirmé. Vous allez aussi recevoir ces liens par e-mail. En attendant, vous pouvez commencer dès maintenant.</p>
+
+ <!-- ===== Accès 1 : parcours parent ===== -->
+ <section class="carte" aria-labelledby="t1">
+  <span class="tag tag-p">Pour vous, parent</span>
+  <h2 id="t1">Phénix 30 Jours</h2>
+  <p>Votre parcours de 30 séances. Commencez par le jour 1 ce soir : 20 minutes, une seule étape.</p>
+  <a class="btn btn-1 js-acces-parent" href="#" target="_blank" rel="noopener">Ouvrir Phénix 30 Jours →</a>
+  <span class="lien-brut js-brut-parent"></span>
+  <button class="btn btn-3 js-copier" data-cible="parent" type="button">Copier le lien pour le garder</button>
+  <p class="msg" role="status" data-msg="parent"></p>
+ </section>
+
+ <!-- ===== Accès 2 : espace ado ===== -->
+ <section class="carte" aria-labelledby="t2">
+  <span class="tag tag-a">Pour votre ado</span>
+  <h2 id="t2">Ou Lé Pa Tousèl</h2>
+  <p>L'espace de votre ado : comprendre, s'entraîner, trouver de l'aide. Gratuit et anonyme, vous pouvez lui transmettre ce lien librement.</p>
+  <a class="btn btn-2 js-acces-ado" href="#" target="_blank" rel="noopener">Ouvrir Ou Lé Pa Tousèl →</a>
+  <span class="lien-brut js-brut-ado"></span>
+  <button class="btn btn-3 js-copier" data-cible="ado" type="button">Copier le lien à envoyer à mon ado</button>
+  <p class="msg" role="status" data-msg="ado"></p>
+ </section>
+
+ <!-- ===== Bien démarrer ===== -->
+ <section class="carte" aria-labelledby="t3">
+  <h2 id="t3">Bien démarrer en 3 gestes</h2>
+  <ol class="etapes">
+   <li><span><b>Ajoutez Phénix à votre écran d'accueil.</b> Sur iPhone : bouton Partager, puis « Sur l'écran d'accueil ». Sur Android : menu ⋮, puis « Ajouter à l'écran d'accueil ».</span></li>
+   <li><span><b>Utilisez toujours le même téléphone ou le même ordinateur.</b> Vos notes sont enregistrées sur l'appareil, pas sur internet : c'est ce qui les rend confidentielles.</span></li>
+   <li><span><b>Faites une sauvegarde de temps en temps.</b> Dans Phénix 30 Jours : Réglages, puis « Sauvegarder mon carnet ». Gardez le texte dans un e-mail ou une note.</span></li>
+  </ol>
+  <p class="astuce">Besoin d'entendre plutôt que de lire ? Activez le <b>mode audio</b> : chaque séance peut être écoutée à voix haute.</p>
+ </section>
+
+ <div class="garantie">
+  <p><b>Satisfait ou remboursé, 14 jours.</b> Si la méthode ne vous convient pas, écrivez-moi dans les 14 jours suivant votre achat à <a href="mailto:coachhoueejm1210@gmail.com">coachhoueejm1210@gmail.com</a> : je vous rembourse intégralement, sans justification.</p>
+ </div>
+
+ <div class="securite">
+  <b>En cas de danger ou de détresse :</b> 3018 (harcèlement et cyberharcèlement, gratuit) · 3114 (souffrance psychique, 24 h/24) · 119 (enfance en danger) · 15 ou 112 (urgence vitale). Phénix ne remplace ni l'équipe éducative, ni un professionnel de santé.
+ </div>
+
+ <footer>
+  <p>Une question, un lien qui ne s'ouvre pas ? Écrivez-moi : <a href="mailto:coachhoueejm1210@gmail.com">coachhoueejm1210@gmail.com</a> · 06 93 54 14 40.</p>
+  <p style="margin-top:6px">Cette page vous est personnelle : merci de ne pas partager le lien de Phénix 30 Jours en dehors de votre foyer. — Jean-Michel Houée</p>
+  <p style="margin-top:6px"><a href="cgv.html">Conditions générales de vente</a> · <a href="mentions-legales.html">Mentions légales</a></p>
+ </footer>
+</main>
+
+<script>
+/* ============ À VÉRIFIER : vos liens d'accès ============ */
+const ACCES = {
+  parent: "https://claude.ai/artifact/X5QJk5e9u5UfGjshby6bJS",    // Phénix 30 Jours (version complète)
+  ado:    "https://harcelement-ou-le-pa-touseul.netlify.app"      // Ou Lé Pa Tousèl
+};
+/* ======================================================= */
+document.querySelector(".js-acces-parent").href = ACCES.parent;
+document.querySelector(".js-brut-parent").textContent = ACCES.parent;
+document.querySelector(".js-acces-ado").href = ACCES.ado;
+document.querySelector(".js-brut-ado").textContent = ACCES.ado;
+document.querySelectorAll(".js-copier").forEach(b=>b.addEventListener("click", async ()=>{
+  const k=b.dataset.cible, url=ACCES[k], msg=document.querySelector(`[data-msg="${k}"]`);
+  try{ await navigator.clipboard.writeText(url); msg.textContent="Lien copié."; }
+  catch(e){
+    const r=document.createRange(); r.selectNodeContents(document.querySelector(".js-brut-"+k));
+    const s=getSelection(); s.removeAllRanges(); s.addRange(r);
+    msg.textContent="Lien sélectionné : copiez-le (Ctrl+C ou appui long).";
+  }
+}));
+</script>
+</body>
+</html>
