@@ -1,0 +1,16 @@
+# Réglages Netlify du site de vente Pack Phénix (dossier publié tel quel, sans compilation)
+[build]
+  publish = "."
+
+# La page de confirmation est réservée aux acheteurs : jamais indexée
+[[headers]]
+  for = "/merci-hoko2gw2fw.html"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow, noarchive"
+    Referrer-Policy = "no-referrer"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
