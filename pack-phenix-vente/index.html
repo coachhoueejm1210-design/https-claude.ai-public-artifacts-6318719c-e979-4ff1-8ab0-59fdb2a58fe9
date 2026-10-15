@@ -135,6 +135,13 @@ section{padding-block:64px}
 .citation{background:rgba(255,255,255,.08);border-radius:var(--r);padding:26px;font-family:'Space Grotesk';font-size:1.3rem;line-height:1.35}
 .citation small{display:block;font-family:'Karla';font-size:.9rem;color:#c7cdf2;margin-top:12px}
 
+.outil{margin-top:16px;border:1.5px dashed rgba(255,255,255,.35);border-radius:var(--r);padding:20px 22px}
+.outil-tag{font-size:.72rem!important;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--jaune)!important}
+.outil h3{color:#fff;font-size:1.2rem;margin:6px 0 8px}
+.outil p{font-size:.95rem}
+.outil .outil-note{margin:10px 0 14px;font-size:.86rem;color:#c7cdf2}
+.outil .outil-note b{color:#fff}
+
 /* ---- offre ---- */
 .offre-carte{max-width:620px;margin:28px auto 0;background:#fff;border-radius:28px;box-shadow:var(--ombre);border:2px solid var(--indigo-p);overflow:hidden}
 .offre-tete{background:var(--indigo);color:#fff;padding:26px 28px}
@@ -348,7 +355,16 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:10px 22px;justify-content:space-bet
    <p style="margin-top:12px">Phénix rassemble ce que j'ai vu fonctionner : un adulte qui tient bon, des mots justes, et des démarches écrites que l'établissement ne peut pas ignorer.</p>
    <div style="margin-top:20px"><a class="btn btn-paypal btn-petit" href="https://la1ere.franceinfo.fr/reunion/des-lycees-de-la-reunion-luttent-activement-contre-le-harcelement-scolaire-1653779.html" target="_blank" rel="noopener">Voir le reportage Réunion La 1ère ↗</a></div>
   </div>
-  <div class="citation">Ce que Phénix rassemble :<small style="font-size:1rem;line-height:1.7;color:#fff;margin-top:14px">· un adulte qui tient bon<br>· les mots justes au bon moment<br>· des démarches écrites que l'établissement ne peut pas ignorer</small></div>
+  <div>
+   <div class="citation">Ce que Phénix rassemble :<small style="font-size:1rem;line-height:1.7;color:#fff;margin-top:14px">· un adulte qui tient bon<br>· les mots justes au bon moment<br>· des démarches écrites que l'établissement ne peut pas ignorer</small></div>
+   <div class="outil">
+    <p class="outil-tag">Mes outils de coach</p>
+    <h3>Console Phénix Ado</h3>
+    <p>L'outil que j'utilise pour animer mes séances d'accompagnement individuel avec un ado : 10 séances guidées, échelles d'évolution, fiches de suivi.</p>
+    <p class="outil-note">Outil professionnel, <b>non inclus dans le Pack Phénix</b>. Présenté ici pour que vous voyiez comment je travaille.</p>
+    <a class="btn btn-paypal btn-petit js-console" href="#" target="_blank" rel="noopener">Voir la démo de la console ↗</a>
+   </div>
+  </div>
  </div>
 </section>
 
@@ -444,6 +460,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:10px 22px;justify-content:space-bet
 const LIENS = {
   commande: "https://coachhoueejm1210.systeme.io/f8904bf2",  // bon de commande System.io (carte + PayPal)
   demo:     "https://demo-ou-le-pa-touseul.netlify.app",  // démo d'Ou Lé Pa Tousèl
+  console:  "https://demo-console-phenix.netlify.app",    // démo Console Phénix Ado (outil du coach, hors Pack)
   mentions: "mentions-legales.html",  // page Mentions légales (obligatoire pour vendre en ligne)
   cgv:      "cgv.html"   // page Conditions générales de vente
 };
@@ -466,6 +483,7 @@ function brancher(sel, url, nom){
 brancher(".js-commande", LIENS.commande, "");
 document.querySelectorAll(".js-demo").forEach(f=>{ f.src = LIENS.demo; });
 document.querySelectorAll(".js-demo-lien").forEach(a=>{ a.href = LIENS.demo; });
+document.querySelectorAll(".js-console").forEach(a=>{ if (LIENS.console) a.href = LIENS.console; else a.remove(); });
 for (const [cls, url] of [[".js-mentions", LIENS.mentions], [".js-cgv", LIENS.cgv]]) {
   const a = document.querySelector(cls);
   if (url) a.href = url; else a.removeAttribute("href");
