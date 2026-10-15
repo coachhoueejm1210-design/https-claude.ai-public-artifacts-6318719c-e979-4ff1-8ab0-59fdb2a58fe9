@@ -17,7 +17,7 @@ Dans Calendly (ou l'agenda System.io), créer un type de rendez-vous :
   « En une phrase, qu'aimeriez-vous avoir clarifié à la fin de notre séance ? »
 - Case à cocher obligatoire (cf. CGV, article 14) :
   « Je demande que la séance ait lieu avant la fin de mon délai de rétractation de 14 jours, et je reconnais perdre ce droit une fois la séance entièrement réalisée. »
-→ Copier le lien de réservation : il servira à l'étape 4.
+→ Créé le 15/10/2026 : https://calendly.com/coachhoueejm1210/plan-d-action-phenix-30-min-en-visio
 
 
 2. L'OFFRE DANS SYSTEM.IO
@@ -74,7 +74,7 @@ Bonjour [Prénom],
 Merci d'avoir choisi d'être accompagné(e) pour démarrer. Votre séance individuelle de 30 minutes est confirmée : il ne reste plus qu'à choisir votre créneau.
 
 ▶ RÉSERVER MA SÉANCE
-[LIEN DE RÉSERVATION]
+https://calendly.com/coachhoueejm1210/plan-d-action-phenix-30-min-en-visio
 
 Les horaires sont proposés à l'heure de La Réunion ; si vous êtes en métropole, le calendrier les affiche à votre heure locale.
 
@@ -109,7 +109,7 @@ Votre séance « Plan d'action Phénix » n'est pas encore réservée. Si le quo
 
 Quel serait le meilleur moment de votre semaine pour vous accorder ces 30 minutes ?
 
-▶ [LIEN DE RÉSERVATION]
+▶ https://calendly.com/coachhoueejm1210/plan-d-action-phenix-30-min-en-visio
 
 Jean-Michel
 
